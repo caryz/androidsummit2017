@@ -15,6 +15,9 @@
 		4A7537A91F23990D002559F3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4A7537A71F23990D002559F3 /* LaunchScreen.storyboard */; };
 		4A7537B41F23990D002559F3 /* guide_for_android_summitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A7537B31F23990D002559F3 /* guide_for_android_summitTests.swift */; };
 		4A7537BF1F23990D002559F3 /* guide_for_android_summitUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A7537BE1F23990D002559F3 /* guide_for_android_summitUITests.swift */; };
+		684E79AAB6B1804D6492552B /* Pods_guide_for_android_summitTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A6CCDC836ED1639D06C92F1F /* Pods_guide_for_android_summitTests.framework */; };
+		76962A64FEEF4A16000C3B5C /* Pods_guide_for_android_summit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F317B527D98B451BCC1E531F /* Pods_guide_for_android_summit.framework */; };
+		9A3C5749804724A600A921AA /* Pods_guide_for_android_summitUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A075DA9D2580DCED0F5580E /* Pods_guide_for_android_summitUITests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +38,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		144184CDB4D4D6ADC132B1E4 /* Pods-guide-for-android-summit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-guide-for-android-summit.release.xcconfig"; path = "Pods/Target Support Files/Pods-guide-for-android-summit/Pods-guide-for-android-summit.release.xcconfig"; sourceTree = "<group>"; };
+		1E3CEBDDD519B945EAD12866 /* Pods-guide-for-android-summit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-guide-for-android-summit.debug.xcconfig"; path = "Pods/Target Support Files/Pods-guide-for-android-summit/Pods-guide-for-android-summit.debug.xcconfig"; sourceTree = "<group>"; };
 		4A7537991F23990D002559F3 /* guide-for-android-summit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "guide-for-android-summit.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4A75379C1F23990D002559F3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4A75379E1F23990D002559F3 /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
@@ -49,6 +54,13 @@
 		4A7537BA1F23990D002559F3 /* guide-for-android-summitUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "guide-for-android-summitUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4A7537BE1F23990D002559F3 /* guide_for_android_summitUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = guide_for_android_summitUITests.swift; sourceTree = "<group>"; };
 		4A7537C01F23990D002559F3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		54811D19926A06C92F4933F3 /* Pods-guide-for-android-summitTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-guide-for-android-summitTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-guide-for-android-summitTests/Pods-guide-for-android-summitTests.release.xcconfig"; sourceTree = "<group>"; };
+		5A075DA9D2580DCED0F5580E /* Pods_guide_for_android_summitUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_guide_for_android_summitUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9478D55B07E9F2A302548899 /* Pods-guide-for-android-summitUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-guide-for-android-summitUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-guide-for-android-summitUITests/Pods-guide-for-android-summitUITests.release.xcconfig"; sourceTree = "<group>"; };
+		A6CCDC836ED1639D06C92F1F /* Pods_guide_for_android_summitTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_guide_for_android_summitTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B2D647B78C64303D87758699 /* Pods-guide-for-android-summitTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-guide-for-android-summitTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-guide-for-android-summitTests/Pods-guide-for-android-summitTests.debug.xcconfig"; sourceTree = "<group>"; };
+		F317B527D98B451BCC1E531F /* Pods_guide_for_android_summit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_guide_for_android_summit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F724014AE6B012EC8706132B /* Pods-guide-for-android-summitUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-guide-for-android-summitUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-guide-for-android-summitUITests/Pods-guide-for-android-summitUITests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +68,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				76962A64FEEF4A16000C3B5C /* Pods_guide_for_android_summit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -63,6 +76,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				684E79AAB6B1804D6492552B /* Pods_guide_for_android_summitTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -70,6 +84,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9A3C5749804724A600A921AA /* Pods_guide_for_android_summitUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -83,6 +98,8 @@
 				4A7537B21F23990D002559F3 /* guide-for-android-summitTests */,
 				4A7537BD1F23990D002559F3 /* guide-for-android-summitUITests */,
 				4A75379A1F23990D002559F3 /* Products */,
+				54E826B4F7EB9B89BDAAAB25 /* Pods */,
+				94EE6CF2B1DDDC4BE0CBAB43 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -128,6 +145,29 @@
 			path = "guide-for-android-summitUITests";
 			sourceTree = "<group>";
 		};
+		54E826B4F7EB9B89BDAAAB25 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				1E3CEBDDD519B945EAD12866 /* Pods-guide-for-android-summit.debug.xcconfig */,
+				144184CDB4D4D6ADC132B1E4 /* Pods-guide-for-android-summit.release.xcconfig */,
+				B2D647B78C64303D87758699 /* Pods-guide-for-android-summitTests.debug.xcconfig */,
+				54811D19926A06C92F4933F3 /* Pods-guide-for-android-summitTests.release.xcconfig */,
+				F724014AE6B012EC8706132B /* Pods-guide-for-android-summitUITests.debug.xcconfig */,
+				9478D55B07E9F2A302548899 /* Pods-guide-for-android-summitUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		94EE6CF2B1DDDC4BE0CBAB43 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F317B527D98B451BCC1E531F /* Pods_guide_for_android_summit.framework */,
+				A6CCDC836ED1639D06C92F1F /* Pods_guide_for_android_summitTests.framework */,
+				5A075DA9D2580DCED0F5580E /* Pods_guide_for_android_summitUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -135,9 +175,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4A7537C31F23990D002559F3 /* Build configuration list for PBXNativeTarget "guide-for-android-summit" */;
 			buildPhases = (
+				F49A174D9FF6394E92E00978 /* [CP] Check Pods Manifest.lock */,
 				4A7537951F23990D002559F3 /* Sources */,
 				4A7537961F23990D002559F3 /* Frameworks */,
 				4A7537971F23990D002559F3 /* Resources */,
+				63619288784A3BE9CCE994F5 /* [CP] Embed Pods Frameworks */,
+				4F55B7557E122973904879C8 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -152,9 +195,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4A7537C61F23990D002559F3 /* Build configuration list for PBXNativeTarget "guide-for-android-summitTests" */;
 			buildPhases = (
+				57DF6B191198484020CFB581 /* [CP] Check Pods Manifest.lock */,
 				4A7537AB1F23990D002559F3 /* Sources */,
 				4A7537AC1F23990D002559F3 /* Frameworks */,
 				4A7537AD1F23990D002559F3 /* Resources */,
+				1962CE8773A55FB95D826945 /* [CP] Embed Pods Frameworks */,
+				46738D83366F9688F385D063 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -170,9 +216,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4A7537C91F23990D002559F3 /* Build configuration list for PBXNativeTarget "guide-for-android-summitUITests" */;
 			buildPhases = (
+				F1DB57CCAF21E57DA5F0DC76 /* [CP] Check Pods Manifest.lock */,
 				4A7537B61F23990D002559F3 /* Sources */,
 				4A7537B71F23990D002559F3 /* Frameworks */,
 				4A7537B81F23990D002559F3 /* Resources */,
+				005E45E893065EDC24515265 /* [CP] Embed Pods Frameworks */,
+				96BDEFE8CD7ECEA0C29EF8AA /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -259,6 +308,144 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		005E45E893065EDC24515265 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-guide-for-android-summitUITests/Pods-guide-for-android-summitUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		1962CE8773A55FB95D826945 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-guide-for-android-summitTests/Pods-guide-for-android-summitTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		46738D83366F9688F385D063 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-guide-for-android-summitTests/Pods-guide-for-android-summitTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		4F55B7557E122973904879C8 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-guide-for-android-summit/Pods-guide-for-android-summit-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		57DF6B191198484020CFB581 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		63619288784A3BE9CCE994F5 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-guide-for-android-summit/Pods-guide-for-android-summit-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		96BDEFE8CD7ECEA0C29EF8AA /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-guide-for-android-summitUITests/Pods-guide-for-android-summitUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F1DB57CCAF21E57DA5F0DC76 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		F49A174D9FF6394E92E00978 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		4A7537951F23990D002559F3 /* Sources */ = {
@@ -419,6 +606,7 @@
 		};
 		4A7537C41F23990D002559F3 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1E3CEBDDD519B945EAD12866 /* Pods-guide-for-android-summit.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = PDUYURGBEJ;
@@ -432,6 +620,7 @@
 		};
 		4A7537C51F23990D002559F3 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 144184CDB4D4D6ADC132B1E4 /* Pods-guide-for-android-summit.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = PDUYURGBEJ;
@@ -445,6 +634,7 @@
 		};
 		4A7537C71F23990D002559F3 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B2D647B78C64303D87758699 /* Pods-guide-for-android-summitTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -460,6 +650,7 @@
 		};
 		4A7537C81F23990D002559F3 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 54811D19926A06C92F4933F3 /* Pods-guide-for-android-summitTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -475,6 +666,7 @@
 		};
 		4A7537CA1F23990D002559F3 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F724014AE6B012EC8706132B /* Pods-guide-for-android-summitUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				DEVELOPMENT_TEAM = PDUYURGBEJ;
@@ -489,6 +681,7 @@
 		};
 		4A7537CB1F23990D002559F3 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9478D55B07E9F2A302548899 /* Pods-guide-for-android-summitUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				DEVELOPMENT_TEAM = PDUYURGBEJ;
