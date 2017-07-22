@@ -8,6 +8,7 @@ target 'guide-for-android-summit' do
   # Pods for guide-for-android-summit
   pod 'IGListKit', '~> 3.0'
   pod 'Firebase/Core'
+  pod 'Firebase/Database'
 
   target 'guide-for-android-summitTests' do
     inherit! :search_paths
