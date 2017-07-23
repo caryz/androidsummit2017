@@ -1,5 +1,5 @@
 //
-//  FirstViewController.swift
+//  SecondViewController.swift
 //  guide-for-android-summit
 //
 //  Created by Cary Zhou on 7/22/17.
@@ -7,16 +7,13 @@
 //
 
 import UIKit
-import FirebaseDatabase
+import Firebase
 
-class FirstViewController: UIViewController {
-
-    var ref: DatabaseReference!
+class SpeakersViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        ref = Database.database().reference()
     }
 
     override func didReceiveMemoryWarning() {

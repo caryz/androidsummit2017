@@ -1,5 +1,5 @@
 //
-//  SecondViewController.swift
+//  FirstViewController.swift
 //  guide-for-android-summit
 //
 //  Created by Cary Zhou on 7/22/17.
@@ -7,12 +7,16 @@
 //
 
 import UIKit
+import Firebase
 
-class SecondViewController: UIViewController {
+class ScheduleViewController: UIViewController {
+    // TODO: make UITableViewController
+    var ref: DatabaseReference!
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        ref = Database.database().reference()
     }
 
     override func didReceiveMemoryWarning() {
