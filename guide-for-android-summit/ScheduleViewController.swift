@@ -17,6 +17,9 @@ class ScheduleViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         ref = Database.database().reference()
+        let handle = Auth.auth().addStateDidChangeListener { (auth, user) in
+            print(auth)
+        }
     }
 
     override func didReceiveMemoryWarning() {
