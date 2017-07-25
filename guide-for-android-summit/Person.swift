@@ -17,7 +17,8 @@ struct Person {
     let fullName: String
     //TODO: have a ref
 
-    init(fullName: String, company: String, description: String, img: String, eventId: Int) {
+    init(fullName: String, company: String, description: String, img: String,
+         eventId: Int) {
         self.fullName = fullName
         self.company = company
         self.description = description

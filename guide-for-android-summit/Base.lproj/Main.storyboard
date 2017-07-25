@@ -10,6 +10,16 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--scheduleTableNav-->
+        <scene sceneID="juV-wG-afw">
+            <objects>
+                <viewControllerPlaceholder storyboardName="ScheduleTableViewController" referencedIdentifier="scheduleTableNav" id="OVZ-9o-UP8" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Schedule" selectedImage="second" id="fj5-G9-e8X"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0yu-Ca-nEC" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1459" y="415"/>
+        </scene>
         <!--Schedule-->
         <scene sceneID="hNz-n2-bh7">
             <objects>
@@ -48,7 +58,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-735" y="738"/>
+            <point key="canvasLocation" x="-834" y="803"/>
         </scene>
         <!--Speakers-->
         <scene sceneID="wg7-f3-ORb">
@@ -84,7 +94,7 @@
                             <constraint firstAttribute="centerY" secondItem="zEq-FU-wV5" secondAttribute="centerY" id="qzY-Ky-pLD"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" systemItem="contacts" id="cPa-gy-q4n"/>
+                    <tabBarItem key="tabBarItem" title="Speakers" id="cPa-gy-q4n"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>
             </objects>
@@ -102,8 +112,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" text="Speakers" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="smn-gG-5e8">
-                                <rect key="frame" x="111" y="313" width="152.5" height="41.5"/>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" text="Info" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="smn-gG-5e8">
+                                <rect key="frame" x="111" y="313" width="152.5" height="42"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="36"/>
@@ -113,7 +123,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" systemItem="more" id="jiw-e0-wcT"/>
+                    <tabBarItem key="tabBarItem" title="About" id="jiw-e0-wcT"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5fd-Ab-xpt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -176,7 +186,7 @@
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                     </tabBar>
                     <connections>
-                        <segue destination="9pv-A4-QxB" kind="relationship" relationship="viewControllers" id="u7Y-xg-7CH"/>
+                        <segue destination="OVZ-9o-UP8" kind="relationship" relationship="viewControllers" id="8dS-iU-tNH"/>
                         <segue destination="8rJ-Kc-sve" kind="relationship" relationship="viewControllers" id="lzU-1b-eKA"/>
                         <segue destination="KGQ-jI-dkv" kind="relationship" relationship="viewControllers" id="Jpa-Vg-vyc"/>
                     </connections>
@@ -186,4 +196,7 @@
             <point key="canvasLocation" x="0.0" y="0.0"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="second" width="30" height="30"/>
+    </resources>
 </document>

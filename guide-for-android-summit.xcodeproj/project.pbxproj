@@ -16,6 +16,8 @@
 		4A7537B41F23990D002559F3 /* guide_for_android_summitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A7537B31F23990D002559F3 /* guide_for_android_summitTests.swift */; };
 		4A7537BF1F23990D002559F3 /* guide_for_android_summitUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A7537BE1F23990D002559F3 /* guide_for_android_summitUITests.swift */; };
 		4A7537CE1F23A014002559F3 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4A7537CD1F23A014002559F3 /* GoogleService-Info.plist */; };
+		4A9BCC411F26DCB3007C0964 /* ScheduleTableViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4A9BCC401F26DCB3007C0964 /* ScheduleTableViewController.storyboard */; };
+		4A9BCC441F26DD08007C0964 /* ScheduleTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A9BCC431F26DD08007C0964 /* ScheduleTableViewController.swift */; };
 		4AEB119F1F24670F00639E45 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AEB119E1F24670F00639E45 /* LoginViewController.swift */; };
 		4AEB11A21F246DA400639E45 /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AEB11A11F246DA400639E45 /* InfoViewController.swift */; };
 		4AEB11A51F246E9000639E45 /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AEB11A41F246E9000639E45 /* Person.swift */; };
@@ -60,6 +62,8 @@
 		4A7537BE1F23990D002559F3 /* guide_for_android_summitUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = guide_for_android_summitUITests.swift; sourceTree = "<group>"; };
 		4A7537C01F23990D002559F3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4A7537CD1F23A014002559F3 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		4A9BCC401F26DCB3007C0964 /* ScheduleTableViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ScheduleTableViewController.storyboard; sourceTree = "<group>"; };
+		4A9BCC431F26DD08007C0964 /* ScheduleTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScheduleTableViewController.swift; sourceTree = "<group>"; };
 		4AEB119E1F24670F00639E45 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		4AEB11A11F246DA400639E45 /* InfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = "<group>"; };
 		4AEB11A41F246E9000639E45 /* Person.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
@@ -128,8 +132,8 @@
 			children = (
 				4AEB11A01F24671300639E45 /* controllers */,
 				4AEB11A31F246DCD00639E45 /* models */,
+				4A9BCC421F26DCB9007C0964 /* storyboards */,
 				4A75379C1F23990D002559F3 /* AppDelegate.swift */,
-				4A7537A21F23990D002559F3 /* Main.storyboard */,
 				4A7537CC1F239FC9002559F3 /* resources */,
 			);
 			path = "guide-for-android-summit";
@@ -164,10 +168,20 @@
 			path = resources;
 			sourceTree = "<group>";
 		};
+		4A9BCC421F26DCB9007C0964 /* storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				4A7537A21F23990D002559F3 /* Main.storyboard */,
+				4A9BCC401F26DCB3007C0964 /* ScheduleTableViewController.storyboard */,
+			);
+			name = storyboards;
+			sourceTree = "<group>";
+		};
 		4AEB11A01F24671300639E45 /* controllers */ = {
 			isa = PBXGroup;
 			children = (
 				4AEB119E1F24670F00639E45 /* LoginViewController.swift */,
+				4A9BCC431F26DD08007C0964 /* ScheduleTableViewController.swift */,
 				4A75379E1F23990D002559F3 /* ScheduleViewController.swift */,
 				4A7537A01F23990D002559F3 /* SpeakersViewController.swift */,
 				4AEB11A11F246DA400639E45 /* InfoViewController.swift */,
@@ -329,6 +343,7 @@
 				4A7537A91F23990D002559F3 /* LaunchScreen.storyboard in Resources */,
 				4A7537CE1F23A014002559F3 /* GoogleService-Info.plist in Resources */,
 				4A7537A61F23990D002559F3 /* Assets.xcassets in Resources */,
+				4A9BCC411F26DCB3007C0964 /* ScheduleTableViewController.storyboard in Resources */,
 				4A7537A41F23990D002559F3 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -492,6 +507,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4A9BCC441F26DD08007C0964 /* ScheduleTableViewController.swift in Sources */,
 				4AEB11A51F246E9000639E45 /* Person.swift in Sources */,
 				4AEB119F1F24670F00639E45 /* LoginViewController.swift in Sources */,
 				4A7537A11F23990D002559F3 /* SpeakersViewController.swift in Sources */,

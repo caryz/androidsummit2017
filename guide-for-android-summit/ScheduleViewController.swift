@@ -11,22 +11,29 @@ import Firebase
 
 class ScheduleViewController: UIViewController {
     // TODO: make UITableViewController
-    var ref: DatabaseReference!
+    let ref = Database.database().reference(withPath: "schedule")
+
+    // instance variables
+    var schedule = [Event]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-        ref = Database.database().reference()
+        handleUserLogin()
+        fetchSchedule()
+    }
+
+    func handleUserLogin() {
         let handle = Auth.auth().addStateDidChangeListener { (auth, user) in
             print(auth)
         }
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    func fetchSchedule() {
+        ref.observe(.value, with: { snapshot in
+            for item in snapshot.children {
+                let event = Event(snapshot: item as! DataSnapshot)
+                print("\(event.title) | \(event.description) | \(event.getStartTimeInDate()) to \(event.getEndTimeInDate())")
+            }
+        })
     }
-
-
 }
-
