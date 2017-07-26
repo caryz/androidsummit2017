@@ -24,8 +24,8 @@ class EventCell: UITableViewCell {
         blockView.layer.shadowColor = UIColor.black.withAlphaComponent(0.5).cgColor
         blockView.layer.shadowOffset = CGSize(width: 2, height: 2)
         blockView.layer.shadowOpacity = 1
-        layer.shadowRadius = 0
-        layer.masksToBounds = false
+        //layer.shadowRadius = 0
+        //layer.masksToBounds = false
     }
 
     func configure(title: String, time: String, speaker: String) {

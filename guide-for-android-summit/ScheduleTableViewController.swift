@@ -30,9 +30,8 @@ class ScheduleTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        //self.tableView.register(EventCell.self, forCellReuseIdentifier: cellReuseIdentifier)
-        //self.tableView.register(EventCell.self, forCellReuseIdentifier: cellReuseIdentifier)
 
+        configureTableView()
         fetchSchedule()
 
         // Uncomment the following line to preserve selection between presentations
@@ -40,6 +39,11 @@ class ScheduleTableViewController: UITableViewController {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+    }
+
+    func configureTableView() {
+        tableView.rowHeight = UITableViewAutomaticDimension
+        tableView.estimatedRowHeight = 150
     }
 
     func fetchSchedule() {
@@ -114,9 +118,9 @@ class ScheduleTableViewController: UITableViewController {
         return convertToAMPM(timeTable[section][0].startTime)
     }
 
-    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 100
-    }
+//    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+//        return 100
+//    }
 
 //    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 //        print("You selected cell #\(indexPath.row)!")
@@ -130,7 +134,7 @@ class ScheduleTableViewController: UITableViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if (segue.identifier == "showEventDetails") {
             // initialize new view controller and cast it as your view controller
-            var viewController = segue.destination as? EventDetailsViewController
+            let viewController = segue.destination as? EventDetailsViewController
             if let indexPath = tableView.indexPathForSelectedRow {
                 viewController?.event = timeTable[indexPath.section][indexPath.row]
             }
