@@ -18,6 +18,9 @@
 		4A7537CE1F23A014002559F3 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4A7537CD1F23A014002559F3 /* GoogleService-Info.plist */; };
 		4A9BCC411F26DCB3007C0964 /* ScheduleTableViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4A9BCC401F26DCB3007C0964 /* ScheduleTableViewController.storyboard */; };
 		4A9BCC441F26DD08007C0964 /* ScheduleTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A9BCC431F26DD08007C0964 /* ScheduleTableViewController.swift */; };
+		4A9BCC4A1F270133007C0964 /* EventCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A9BCC481F270133007C0964 /* EventCell.swift */; };
+		4A9BCC4D1F27019A007C0964 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A9BCC4C1F27019A007C0964 /* Utilities.swift */; };
+		4A9BCC511F27E241007C0964 /* EventDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A9BCC501F27E241007C0964 /* EventDetailsViewController.swift */; };
 		4AEB119F1F24670F00639E45 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AEB119E1F24670F00639E45 /* LoginViewController.swift */; };
 		4AEB11A21F246DA400639E45 /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AEB11A11F246DA400639E45 /* InfoViewController.swift */; };
 		4AEB11A51F246E9000639E45 /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AEB11A41F246E9000639E45 /* Person.swift */; };
@@ -64,6 +67,9 @@
 		4A7537CD1F23A014002559F3 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		4A9BCC401F26DCB3007C0964 /* ScheduleTableViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ScheduleTableViewController.storyboard; sourceTree = "<group>"; };
 		4A9BCC431F26DD08007C0964 /* ScheduleTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScheduleTableViewController.swift; sourceTree = "<group>"; };
+		4A9BCC481F270133007C0964 /* EventCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventCell.swift; sourceTree = "<group>"; };
+		4A9BCC4C1F27019A007C0964 /* Utilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
+		4A9BCC501F27E241007C0964 /* EventDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventDetailsViewController.swift; sourceTree = "<group>"; };
 		4AEB119E1F24670F00639E45 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		4AEB11A11F246DA400639E45 /* InfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = "<group>"; };
 		4AEB11A41F246E9000639E45 /* Person.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
@@ -133,6 +139,7 @@
 				4AEB11A01F24671300639E45 /* controllers */,
 				4AEB11A31F246DCD00639E45 /* models */,
 				4A9BCC421F26DCB9007C0964 /* storyboards */,
+				4A9BCC471F2700F8007C0964 /* views */,
 				4A75379C1F23990D002559F3 /* AppDelegate.swift */,
 				4A7537CC1F239FC9002559F3 /* resources */,
 			);
@@ -177,6 +184,15 @@
 			name = storyboards;
 			sourceTree = "<group>";
 		};
+		4A9BCC471F2700F8007C0964 /* views */ = {
+			isa = PBXGroup;
+			children = (
+				4A9BCC481F270133007C0964 /* EventCell.swift */,
+				4A9BCC501F27E241007C0964 /* EventDetailsViewController.swift */,
+			);
+			name = views;
+			sourceTree = "<group>";
+		};
 		4AEB11A01F24671300639E45 /* controllers */ = {
 			isa = PBXGroup;
 			children = (
@@ -194,6 +210,7 @@
 			children = (
 				4AEB11A41F246E9000639E45 /* Person.swift */,
 				4AEB11A61F246E9A00639E45 /* Event.swift */,
+				4A9BCC4C1F27019A007C0964 /* Utilities.swift */,
 			);
 			name = models;
 			sourceTree = "<group>";
@@ -508,12 +525,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				4A9BCC441F26DD08007C0964 /* ScheduleTableViewController.swift in Sources */,
+				4A9BCC4A1F270133007C0964 /* EventCell.swift in Sources */,
 				4AEB11A51F246E9000639E45 /* Person.swift in Sources */,
 				4AEB119F1F24670F00639E45 /* LoginViewController.swift in Sources */,
 				4A7537A11F23990D002559F3 /* SpeakersViewController.swift in Sources */,
 				4A75379D1F23990D002559F3 /* AppDelegate.swift in Sources */,
 				4A75379F1F23990D002559F3 /* ScheduleViewController.swift in Sources */,
 				4AEB11A71F246E9A00639E45 /* Event.swift in Sources */,
+				4A9BCC4D1F27019A007C0964 /* Utilities.swift in Sources */,
+				4A9BCC511F27E241007C0964 /* EventDetailsViewController.swift in Sources */,
 				4AEB11A21F246DA400639E45 /* InfoViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

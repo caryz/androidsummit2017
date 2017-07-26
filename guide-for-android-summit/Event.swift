@@ -28,8 +28,8 @@ struct Event {
     // MARK: Instance Variables & Init
     let title: String
     let description: String
-    let startTime: Int
-    let endTime: Int
+    let startTime: TimeInterval
+    let endTime: TimeInterval
     let track: EventTrack
     let speaker: String // some sort of ID here, guid or int?
 
@@ -37,7 +37,7 @@ struct Event {
     let key: String
     let ref: DatabaseReference?
 
-    init(title: String, description: String, startTime: Int, endTime: Int,
+    init(title: String, description: String, startTime: TimeInterval, endTime: TimeInterval,
          track: EventTrack, speaker: String, key: String) {
         self.title = title
         self.description = description
@@ -51,22 +51,33 @@ struct Event {
 
     init(snapshot: DataSnapshot) {
         let snapshotValue = snapshot.value as! [String: AnyObject]
-        title = snapshotValue["title"] as? String ?? "Empty Title"
-        description = snapshotValue["description"] as? String ?? "Empty Description"
-        startTime = snapshotValue["start"] as? Int ?? 0
-        endTime = snapshotValue["end"] as? Int ?? 0
-        track = EventTrack(rawValue: snapshotValue["type"] as? Int ?? -1)!
-        speaker = snapshotValue["speaker"] as? String ?? "Empty Speaker"
+        let e = EventFields()
+        title = snapshotValue[e.title] as? String ?? "Empty Title"
+        description = snapshotValue[e.description] as? String ?? "Empty Description"
+        startTime = snapshotValue[e.startTime] as? TimeInterval ?? 0
+        endTime = snapshotValue[e.endTime] as? TimeInterval ?? 0
+        track = EventTrack(rawValue: snapshotValue[e.track] as? Int ?? -1)!
+        speaker = snapshotValue[e.speaker] as? String ?? "Empty Speaker"
         key = snapshot.key
         ref = snapshot.ref
     }
 
     // MARK: Utility functions
-    func getStartTimeInDate() -> Date {
-        return Date(timeIntervalSince1970: TimeInterval(self.startTime / 1000))
+    func getStartTime() -> String {
+        return convertToAMPM(startTime)
     }
 
-    func getEndTimeInDate() -> Date {
-        return Date(timeIntervalSince1970: TimeInterval(self.endTime / 1000))
+    func getEndTime() -> String {
+        return convertToAMPM(endTime)
+    }
+
+    func getStartTimeComp() -> DateComponents {
+        return Calendar.current.dateComponents([.day, .hour, .minute],
+                                               from: convertIntervalToDate(self.startTime))
+    }
+
+    func getEndTimeComp() -> DateComponents {
+        return Calendar.current.dateComponents([.day, .hour, .minute],
+                                               from: convertIntervalToDate(self.endTime))
     }
 }

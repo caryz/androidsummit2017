@@ -12,14 +12,27 @@ import Firebase
 class ScheduleTableViewController: UITableViewController {
 
     // MARK: - Instance Variables
-    let cellReuseIdentifier = "eventCell"
+    let cellReuseIdentifier = "customEventCell"
     var events = [Event]()
     let ref = Database.database().reference(withPath: "schedule")
     var sectionCount: Int = 0
     var eventCount: Int = 0
+    var eventToPass: Event?
+
+    var timeTable = [[Event]]()// each row is [section row row row]
+    var didFinishFetching: Bool = false {
+        didSet {
+            if didFinishFetching == true {
+                // ??
+            }
+        }
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        //self.tableView.register(EventCell.self, forCellReuseIdentifier: cellReuseIdentifier)
+        //self.tableView.register(EventCell.self, forCellReuseIdentifier: cellReuseIdentifier)
+
         fetchSchedule()
 
         // Uncomment the following line to preserve selection between presentations
@@ -30,39 +43,98 @@ class ScheduleTableViewController: UITableViewController {
     }
 
     func fetchSchedule() {
-        ref.observe(.value, with: { snapshot in
+        ref.queryOrdered(byChild: "start").observe(.value, with: { snapshot in
             for item in snapshot.children {
                 let event = Event(snapshot: item as! DataSnapshot)
-                print("\(event.title) | \(event.description) | \(event.getStartTimeInDate()) to \(event.getEndTimeInDate())")
                 self.events.append(event)
             }
-
-            self.eventCount = self.events.count
-            self.sectionCount = 1
+            for e in self.events {
+                print(e.startTime)
+            }
+            self.populateTimeTable()
             self.tableView.reloadData()
             // stop spinner here spinner
         })
     }
 
+    func populateTimeTable() {
+        //var i: Int = -1
+        var lastTime: TimeInterval = 0
+
+        for event in events {
+            if event.startTime != lastTime {
+                // add section
+                timeTable.append([event])
+            } else {
+                // add row
+                timeTable[timeTable.count-1].append(event)
+            }
+
+            lastTime = event.startTime
+        }
+        print("Total: \(timeTable.count) sections")
+        for t in timeTable {
+            print(t.count)
+            for t2 in t {
+                print("\(t2) | ")
+            }
+        }
+    }
+
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return sectionCount
+        return timeTable.count
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return eventCount
+        return timeTable[section].count
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: cellReuseIdentifier, for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: cellReuseIdentifier, for: indexPath) as! EventCell
 
-        let event = events[indexPath.row]
-        cell.textLabel?.text = event.title
-        cell.detailTextLabel?.text = "\(event.getStartTimeInDate()) - \(event.getEndTimeInDate())"
+        let event = timeTable[indexPath.section][indexPath.row]
+        let timeText = "\(event.getStartTime()) - \(event.getEndTime())"
+        cell.configure(title: event.title, time: timeText, speaker: event.speaker)
+        //cell.textLabel?.text = event.title
+        //cell.detailTextLabel?.text = timeText
+
+        let colors = TrackColors()
+        switch event.track {
+        case .Design: cell.blockView.backgroundColor = colors.Design
+        case .Development: cell.blockView.backgroundColor = colors.Development
+        case .Testing: cell.blockView.backgroundColor = colors.Testing
+        default: cell.blockView.backgroundColor = cell.backgroundColor
+        }
         return cell
+    }
+
+    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return convertToAMPM(timeTable[section][0].startTime)
+    }
+
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 100
+    }
+
+//    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+//        print("You selected cell #\(indexPath.row)!")
+//
+//        let event = timeTable[indexPath.section][indexPath.row]
+//
+//        //valueToPass = currentCell.textLabel.text
+//        //performSegue(withIdentifier: "showEventDetails", sender: self)
+//    }
+
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if (segue.identifier == "showEventDetails") {
+            // initialize new view controller and cast it as your view controller
+            var viewController = segue.destination as? EventDetailsViewController
+            if let indexPath = tableView.indexPathForSelectedRow {
+                viewController?.event = timeTable[indexPath.section][indexPath.row]
+            }
+        }
     }
 
     /*

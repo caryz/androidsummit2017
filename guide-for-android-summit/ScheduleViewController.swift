@@ -32,7 +32,6 @@ class ScheduleViewController: UIViewController {
         ref.observe(.value, with: { snapshot in
             for item in snapshot.children {
                 let event = Event(snapshot: item as! DataSnapshot)
-                print("\(event.title) | \(event.description) | \(event.getStartTimeInDate()) to \(event.getEndTimeInDate())")
             }
         })
     }
