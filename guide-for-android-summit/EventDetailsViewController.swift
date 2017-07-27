@@ -11,9 +11,11 @@ import UIKit
 class EventDetailsViewController: UIViewController {
     // MARK: Outlets
     @IBOutlet weak var scrollView: UIScrollView!
+    @IBOutlet weak var contentStack: UIStackView!
+
+    @IBOutlet weak var headerBackgroundView: UIView!
     @IBOutlet weak var titleLabel: UILabel!
-    @IBOutlet weak var descriptionLabel: UILabel!
-    @IBOutlet weak var speakerLabel: UILabel!
+    @IBOutlet weak var timeLabel: UILabel!
 
 
     // MARK: Instance Variables
@@ -21,21 +23,27 @@ class EventDetailsViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        titleLabel.text = event?.title
-        descriptionLabel.text = event?.description
-        speakerLabel.text = event?.speaker
-        // Do any additional setup after loading the view.
+        configure()
     }
 
+    func configure() {
+        guard let event = self.event else { return }
+        let trackColor = TrackColors().getColor(event.track)
 
-    /*
-    // MARK: - Navigation
+        titleLabel.textColor = trackColor
+        titleLabel.text = event.title
+        timeLabel.text = "\(event.getStartTime())-\(event.getEndTime())"
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        //headerBackgroundView.backgroundColor = trackColor
+
+        addBoxyView(title: "Description", content: event.description, color: trackColor)
+        addBoxyView(title: "Speakers", content: nil, color: trackColor)
     }
-    */
+
+    func addBoxyView(title: String?, content: String? = nil, color: UIColor? = nil) {
+        let box = BoxyView.instanceFromNib()
+        box.configure(title, content: content, color: color)
+        contentStack.addArrangedSubview(box)
+    }
 
 }

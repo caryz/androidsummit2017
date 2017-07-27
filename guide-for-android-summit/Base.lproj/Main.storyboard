@@ -85,18 +85,18 @@
                                 <constraints>
                                     <constraint firstItem="kiw-Ol-HDM" firstAttribute="width" secondItem="tty-zV-ssx" secondAttribute="width" id="16E-FU-u6c"/>
                                     <constraint firstItem="kiw-Ol-HDM" firstAttribute="top" secondItem="tty-zV-ssx" secondAttribute="top" constant="-64" id="ToX-7z-NoC"/>
-                                    <constraint firstAttribute="trailing" secondItem="kiw-Ol-HDM" secondAttribute="trailing" id="i0P-zL-0Ud"/>
+                                    <constraint firstItem="kiw-Ol-HDM" firstAttribute="trailing" secondItem="tty-zV-ssx" secondAttribute="trailing" id="i0P-zL-0Ud"/>
                                     <constraint firstItem="kiw-Ol-HDM" firstAttribute="leading" secondItem="tty-zV-ssx" secondAttribute="leading" id="lTm-l0-R9D"/>
-                                    <constraint firstAttribute="bottom" secondItem="kiw-Ol-HDM" secondAttribute="bottom" id="nJb-la-Z59"/>
+                                    <constraint firstItem="kiw-Ol-HDM" firstAttribute="bottom" secondItem="tty-zV-ssx" secondAttribute="bottom" id="nJb-la-Z59"/>
                                 </constraints>
                             </scrollView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="tty-zV-ssx" firstAttribute="top" secondItem="Cnc-5H-DcQ" secondAttribute="bottom" id="7IQ-G4-lfh"/>
-                            <constraint firstAttribute="trailing" secondItem="tty-zV-ssx" secondAttribute="trailing" id="OCT-d6-5th"/>
+                            <constraint firstItem="tty-zV-ssx" firstAttribute="trailing" secondItem="DHO-j8-Jw8" secondAttribute="trailing" id="OCT-d6-5th"/>
                             <constraint firstItem="tty-zV-ssx" firstAttribute="leading" secondItem="DHO-j8-Jw8" secondAttribute="leading" id="QSk-QI-SGW"/>
-                            <constraint firstItem="fch-dm-Xmc" firstAttribute="top" secondItem="tty-zV-ssx" secondAttribute="bottom" id="ejm-bA-mhF"/>
+                            <constraint firstItem="tty-zV-ssx" firstAttribute="bottom" secondItem="fch-dm-Xmc" secondAttribute="top" id="ejm-bA-mhF"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="About" id="Xlg-IV-yMF"/>

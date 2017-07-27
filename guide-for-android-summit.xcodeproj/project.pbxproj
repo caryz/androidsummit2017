@@ -195,7 +195,6 @@
 			isa = PBXGroup;
 			children = (
 				4A9BCC481F270133007C0964 /* EventCell.swift */,
-				4A9BCC501F27E241007C0964 /* EventDetailsViewController.swift */,
 				4A4D28CA1F297B3900B056D6 /* BoxyView.swift */,
 				4A4D28CC1F297B4300B056D6 /* BoxyView.xib */,
 			);
@@ -205,11 +204,12 @@
 		4AEB11A01F24671300639E45 /* controllers */ = {
 			isa = PBXGroup;
 			children = (
+				4A75379E1F23990D002559F3 /* ScheduleViewController.swift */,
 				4AEB119E1F24670F00639E45 /* LoginViewController.swift */,
 				4A9BCC431F26DD08007C0964 /* ScheduleTableViewController.swift */,
-				4A75379E1F23990D002559F3 /* ScheduleViewController.swift */,
 				4A7537A01F23990D002559F3 /* SpeakersViewController.swift */,
 				4AEB11A11F246DA400639E45 /* InfoViewController.swift */,
+				4A9BCC501F27E241007C0964 /* EventDetailsViewController.swift */,
 			);
 			name = controllers;
 			sourceTree = "<group>";

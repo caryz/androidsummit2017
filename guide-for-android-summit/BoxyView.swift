@@ -25,13 +25,34 @@ class BoxyView: UIView {
         return UINib(nibName: "BoxyView", bundle: nil).instantiate(withOwner: self, options: nil)[0] as! BoxyView
     }
 
-    func configure(_ title: String, content: String, color: UIColor, imageName: String? = nil) {
-        self.titleLabel?.text = title
-        self.contentLabel?.text = content
-        self.titleBackgroundView?.backgroundColor = color
+    func configure(_ title: String? = nil, content: String? = nil, color: UIColor? = nil, imageName: String? = nil) {
+        if let title = title {
+            self.titleLabel.text = title
+        } else {
+            self.titleLabel.isHidden = true
+        }
+
+        if let content = content {
+            self.contentLabel.text = content
+        } else {
+            self.contentLabel.isHidden = true
+        }
+
+        if let bgColor = color {
+            self.titleBackgroundView.backgroundColor = bgColor
+        } else {
+            self.titleBackgroundView.isHidden = true
+        }
+
         if let imgName = imageName {
             self.image.image = UIImage(named: imgName)
+        } else {
+            self.image.isHidden = true
         }
+    }
+
+    func addCustomViewToStack(_ customView: UIView) {
+        contentStack.addArrangedSubview(customView)
     }
     
     fileprivate func addShadows() {

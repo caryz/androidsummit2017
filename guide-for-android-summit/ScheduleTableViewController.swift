@@ -47,7 +47,7 @@ class ScheduleTableViewController: UIViewController, UITableViewDelegate, UITabl
     }
 
     func configureTableView() {
-        tableView.estimatedRowHeight = 44
+        tableView.estimatedRowHeight = 100
         tableView.rowHeight = UITableViewAutomaticDimension
         loadingSpinner.startAnimating()
     }
@@ -83,13 +83,6 @@ class ScheduleTableViewController: UIViewController, UITableViewDelegate, UITabl
             }
             lastTime = event.startTime
         }
-        print("Total: \(timeTable.count) sections")
-        for t in timeTable {
-            print(t.count)
-            for t2 in t {
-                print("\(t2) | ")
-            }
-        }
     }
 
     // MARK: - Table view data source
@@ -114,13 +107,10 @@ class ScheduleTableViewController: UIViewController, UITableViewDelegate, UITabl
         switch event.track {
         case .Design:
             buildTopBorder(colors.Design, view: cell.blockView)
-            //cell.blockView.backgroundColor = colors.Design
         case .Development:
             buildTopBorder(colors.Development, view: cell.blockView)
-            //cell.blockView.backgroundColor = colors.Development
         case .Testing:
             buildTopBorder(colors.Testing, view: cell.blockView)
-            //cell.blockView.backgroundColor = colors.Testing
         default:
             cell.blockView.backgroundColor = UIColor.white
         }
@@ -142,15 +132,6 @@ class ScheduleTableViewController: UIViewController, UITableViewDelegate, UITabl
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return UITableViewAutomaticDimension
     }
-
-//    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        print("You selected cell #\(indexPath.row)!")
-//
-//        let event = timeTable[indexPath.section][indexPath.row]
-//
-//        //valueToPass = currentCell.textLabel.text
-//        //performSegue(withIdentifier: "showEventDetails", sender: self)
-//    }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if (segue.identifier == SegueId.eventDetails.rawValue) {

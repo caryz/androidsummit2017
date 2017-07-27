@@ -37,6 +37,20 @@ struct TrackColors {
     let Development = UIColor(red: 1, green: 0.698, blue: 0.698, alpha: 1.0)
     let Design = UIColor(red: 0.698, green: 0.8431, blue: 1, alpha: 1.0)
     let Testing = UIColor(red: 0.698, green: 1, blue: 0.7569, alpha: 1.0)
+    let defaultColor = UIColor.lightGray
+
+    func getColor(_ track: EventTrack) -> UIColor {
+        switch track {
+        case .Design:
+            return Design
+        case .Development:
+            return Development
+        case .Testing:
+            return Testing
+        default:
+            return defaultColor
+        }
+    }
 }
 
 func convertIntervalToDate(_ interval: TimeInterval) -> Date {
