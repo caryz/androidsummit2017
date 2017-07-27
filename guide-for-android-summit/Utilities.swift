@@ -12,6 +12,7 @@ import UIKit
 enum SegueId: String {
     case eventDetails = "showEventDetails"
     case tabBarSegue = "TabBarSegue"
+    case speakerDetails = "showSpeakerDetails"
 }
 
 enum EventFieldsEnum: String {
@@ -30,7 +31,15 @@ struct EventFields {
     let endTime = "end"
     let track = "type"
     let speaker = "speaker"
-    let location = "location"
+    let location = "location" // new
+}
+
+struct SpeakerFields {
+    let fullName = "name"
+    let company = "company"
+    let description = "description"
+    let avatar = "img"
+    let eventId = "eventId"
 }
 
 struct TrackColors {

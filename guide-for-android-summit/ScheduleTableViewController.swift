@@ -62,7 +62,7 @@ class ScheduleTableViewController: UIViewController, UITableViewDelegate, UITabl
                 print(e.startTime)
             }
 
-            sleep(1)
+            //sleep(1)
             self.populateTimeTable()
             self.loadingSpinner.stopAnimating()
             UIApplication.shared.statusBarView?.backgroundColor = .white
