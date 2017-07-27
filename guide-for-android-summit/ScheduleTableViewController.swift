@@ -45,8 +45,8 @@ class ScheduleTableViewController: UIViewController, UITableViewDelegate, UITabl
     }
 
     func configureTableView() {
+        tableView.estimatedRowHeight = 44
         tableView.rowHeight = UITableViewAutomaticDimension
-        tableView.estimatedRowHeight = 150
         loadingSpinner.startAnimating()
     }
 
@@ -64,7 +64,6 @@ class ScheduleTableViewController: UIViewController, UITableViewDelegate, UITabl
             self.populateTimeTable()
             self.loadingSpinner.stopAnimating()
             self.tableView.reloadData()
-            // stop spinner here spinner
         })
     }
 
@@ -106,15 +105,17 @@ class ScheduleTableViewController: UIViewController, UITableViewDelegate, UITabl
         let event = timeTable[indexPath.section][indexPath.row]
         let timeText = "\(event.getStartTime()) - \(event.getEndTime())"
         cell.configure(title: event.title, time: timeText, speaker: event.speaker)
-        //cell.textLabel?.text = event.title
-        //cell.detailTextLabel?.text = timeText
 
         let colors = TrackColors()
         switch event.track {
-        case .Design: cell.blockView.backgroundColor = colors.Design
-        case .Development: cell.blockView.backgroundColor = colors.Development
-        case .Testing: cell.blockView.backgroundColor = colors.Testing
-        default: cell.blockView.backgroundColor = cell.backgroundColor
+        case .Design:
+            cell.blockView.backgroundColor = colors.Design
+        case .Development:
+            cell.blockView.backgroundColor = colors.Development
+        case .Testing:
+            cell.blockView.backgroundColor = colors.Testing
+        default:
+            cell.blockView.backgroundColor = UIColor.white
         }
         return cell
     }
@@ -123,9 +124,9 @@ class ScheduleTableViewController: UIViewController, UITableViewDelegate, UITabl
         return convertToAMPM(timeTable[section][0].startTime)
     }
 
-//    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-//        return 100
-//    }
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return UITableViewAutomaticDimension
+    }
 
 //    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 //        print("You selected cell #\(indexPath.row)!")
@@ -137,7 +138,7 @@ class ScheduleTableViewController: UIViewController, UITableViewDelegate, UITabl
 //    }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if (segue.identifier == "showEventDetails") {
+        if (segue.identifier == SegueId.eventDetails.rawValue) {
             // initialize new view controller and cast it as your view controller
             let viewController = segue.destination as? EventDetailsViewController
             if let indexPath = tableView.indexPathForSelectedRow {

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4A4D28C91F2970F400B056D6 /* SpeakerTab.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4A4D28C71F2970F400B056D6 /* SpeakerTab.storyboard */; };
 		4A75379D1F23990D002559F3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A75379C1F23990D002559F3 /* AppDelegate.swift */; };
 		4A75379F1F23990D002559F3 /* ScheduleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A75379E1F23990D002559F3 /* ScheduleViewController.swift */; };
 		4A7537A11F23990D002559F3 /* SpeakersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A7537A01F23990D002559F3 /* SpeakersViewController.swift */; };
@@ -16,7 +17,7 @@
 		4A7537B41F23990D002559F3 /* guide_for_android_summitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A7537B31F23990D002559F3 /* guide_for_android_summitTests.swift */; };
 		4A7537BF1F23990D002559F3 /* guide_for_android_summitUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A7537BE1F23990D002559F3 /* guide_for_android_summitUITests.swift */; };
 		4A7537CE1F23A014002559F3 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4A7537CD1F23A014002559F3 /* GoogleService-Info.plist */; };
-		4A9BCC411F26DCB3007C0964 /* ScheduleTableViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4A9BCC401F26DCB3007C0964 /* ScheduleTableViewController.storyboard */; };
+		4A9BCC411F26DCB3007C0964 /* ScheduleTab.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4A9BCC401F26DCB3007C0964 /* ScheduleTab.storyboard */; };
 		4A9BCC441F26DD08007C0964 /* ScheduleTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A9BCC431F26DD08007C0964 /* ScheduleTableViewController.swift */; };
 		4A9BCC4A1F270133007C0964 /* EventCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A9BCC481F270133007C0964 /* EventCell.swift */; };
 		4A9BCC4D1F27019A007C0964 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A9BCC4C1F27019A007C0964 /* Utilities.swift */; };
@@ -50,6 +51,7 @@
 /* Begin PBXFileReference section */
 		144184CDB4D4D6ADC132B1E4 /* Pods-guide-for-android-summit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-guide-for-android-summit.release.xcconfig"; path = "Pods/Target Support Files/Pods-guide-for-android-summit/Pods-guide-for-android-summit.release.xcconfig"; sourceTree = "<group>"; };
 		1E3CEBDDD519B945EAD12866 /* Pods-guide-for-android-summit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-guide-for-android-summit.debug.xcconfig"; path = "Pods/Target Support Files/Pods-guide-for-android-summit/Pods-guide-for-android-summit.debug.xcconfig"; sourceTree = "<group>"; };
+		4A4D28C81F2970F400B056D6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/SpeakerTab.storyboard; sourceTree = "<group>"; };
 		4A7537991F23990D002559F3 /* guide-for-android-summit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "guide-for-android-summit.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4A75379C1F23990D002559F3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4A75379E1F23990D002559F3 /* ScheduleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleViewController.swift; sourceTree = "<group>"; };
@@ -65,7 +67,7 @@
 		4A7537BE1F23990D002559F3 /* guide_for_android_summitUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = guide_for_android_summitUITests.swift; sourceTree = "<group>"; };
 		4A7537C01F23990D002559F3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4A7537CD1F23A014002559F3 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		4A9BCC401F26DCB3007C0964 /* ScheduleTableViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ScheduleTableViewController.storyboard; sourceTree = "<group>"; };
+		4A9BCC401F26DCB3007C0964 /* ScheduleTab.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ScheduleTab.storyboard; sourceTree = "<group>"; };
 		4A9BCC431F26DD08007C0964 /* ScheduleTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScheduleTableViewController.swift; sourceTree = "<group>"; };
 		4A9BCC481F270133007C0964 /* EventCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventCell.swift; sourceTree = "<group>"; };
 		4A9BCC4C1F27019A007C0964 /* Utilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
@@ -179,7 +181,8 @@
 			isa = PBXGroup;
 			children = (
 				4A7537A21F23990D002559F3 /* Main.storyboard */,
-				4A9BCC401F26DCB3007C0964 /* ScheduleTableViewController.storyboard */,
+				4A4D28C71F2970F400B056D6 /* SpeakerTab.storyboard */,
+				4A9BCC401F26DCB3007C0964 /* ScheduleTab.storyboard */,
 			);
 			name = storyboards;
 			sourceTree = "<group>";
@@ -360,7 +363,8 @@
 				4A7537A91F23990D002559F3 /* LaunchScreen.storyboard in Resources */,
 				4A7537CE1F23A014002559F3 /* GoogleService-Info.plist in Resources */,
 				4A7537A61F23990D002559F3 /* Assets.xcassets in Resources */,
-				4A9BCC411F26DCB3007C0964 /* ScheduleTableViewController.storyboard in Resources */,
+				4A9BCC411F26DCB3007C0964 /* ScheduleTab.storyboard in Resources */,
+				4A4D28C91F2970F400B056D6 /* SpeakerTab.storyboard in Resources */,
 				4A7537A41F23990D002559F3 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -570,6 +574,14 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		4A4D28C71F2970F400B056D6 /* SpeakerTab.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4A4D28C81F2970F400B056D6 /* Base */,
+			);
+			name = SpeakerTab.storyboard;
+			sourceTree = "<group>";
+		};
 		4A7537A21F23990D002559F3 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (

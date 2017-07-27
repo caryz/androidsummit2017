@@ -9,9 +9,8 @@
 import UIKit
 
 class LoginViewController: UIViewController {
-    let tabBarSegueIdentifier = "TabBarSegue"
 
     @IBAction func loginButton(_ sender: UIButton) {
-        performSegue(withIdentifier: tabBarSegueIdentifier, sender: nil)
+        performSegue(withIdentifier: SegueId.tabBarSegue.rawValue, sender: nil)
     }
 }

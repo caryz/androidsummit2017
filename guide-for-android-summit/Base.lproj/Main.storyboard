@@ -12,12 +12,12 @@
         <!--scheduleTableNav-->
         <scene sceneID="juV-wG-afw">
             <objects>
-                <viewControllerPlaceholder storyboardName="ScheduleTableViewController" referencedIdentifier="scheduleTableNav" id="OVZ-9o-UP8" sceneMemberID="viewController">
+                <viewControllerPlaceholder storyboardIdentifier="ScheduleTab" storyboardName="ScheduleTab" referencedIdentifier="scheduleTableNav" id="OVZ-9o-UP8" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Schedule" image="calendar-dark" id="fj5-G9-e8X"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0yu-Ca-nEC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-630" y="449"/>
+            <point key="canvasLocation" x="862" y="-1"/>
         </scene>
         <!--Schedule-->
         <scene sceneID="hNz-n2-bh7">
@@ -59,46 +59,6 @@
             </objects>
             <point key="canvasLocation" x="-1873" y="373"/>
         </scene>
-        <!--Speakers-->
-        <scene sceneID="wg7-f3-ORb">
-            <objects>
-                <viewController id="8rJ-Kc-sve" userLabel="Speakers" customClass="SpeakersViewController" customModule="guide_for_android_summit" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="L7p-HK-0SC"/>
-                        <viewControllerLayoutGuide type="bottom" id="Djb-ko-YwX"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="QS5-Rx-YEW">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" text="Speakers" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="zEq-FU-wV5">
-                                <rect key="frame" x="111.5" y="288.5" width="152.5" height="41.5"/>
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="36"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Loaded by SecondViewController" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NDk-cv-Gan">
-                                <rect key="frame" x="80" y="338" width="215" height="17"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <constraints>
-                            <constraint firstItem="NDk-cv-Gan" firstAttribute="top" secondItem="zEq-FU-wV5" secondAttribute="bottom" constant="8" symbolic="YES" id="Day-4N-Vmt"/>
-                            <constraint firstItem="NDk-cv-Gan" firstAttribute="centerX" secondItem="zEq-FU-wV5" secondAttribute="centerX" id="JgO-Fn-dHn"/>
-                            <constraint firstAttribute="centerX" secondItem="zEq-FU-wV5" secondAttribute="centerX" id="qqM-NS-xev"/>
-                            <constraint firstAttribute="centerY" secondItem="zEq-FU-wV5" secondAttribute="centerY" id="qzY-Ky-pLD"/>
-                        </constraints>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="Speakers" image="account-multiple-dark" id="cPa-gy-q4n"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-1" y="738"/>
-        </scene>
         <!--Info-->
         <scene sceneID="kpX-K0-UWJ">
             <objects>
@@ -122,11 +82,11 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="About" image="information-outline-dark" id="jiw-e0-wcT"/>
+                    <navigationItem key="navigationItem" title="About" id="Xlg-IV-yMF"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5fd-Ab-xpt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="727" y="737"/>
+            <point key="canvasLocation" x="-1" y="713"/>
         </scene>
         <!--Login-->
         <scene sceneID="Uhp-Rz-L7e">
@@ -200,7 +160,7 @@
         <!--Tab Bar Controller-->
         <scene sceneID="yl2-sM-qoP">
             <objects>
-                <tabBarController id="49e-Tb-3d3" sceneMemberID="viewController">
+                <tabBarController modalTransitionStyle="flipHorizontal" id="49e-Tb-3d3" sceneMemberID="viewController">
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics" translucent="NO"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" translucent="NO" id="W28-zg-YXA">
                         <rect key="frame" x="0.0" y="975" width="768" height="49"/>
@@ -216,18 +176,46 @@
                     </tabBar>
                     <connections>
                         <segue destination="OVZ-9o-UP8" kind="relationship" relationship="viewControllers" id="zli-Dn-Ca2"/>
-                        <segue destination="8rJ-Kc-sve" kind="relationship" relationship="viewControllers" id="lzU-1b-eKA"/>
-                        <segue destination="KGQ-jI-dkv" kind="relationship" relationship="viewControllers" id="Jpa-Vg-vyc"/>
+                        <segue destination="WuQ-aW-VcD" kind="relationship" relationship="viewControllers" id="lzU-1b-eKA"/>
+                        <segue destination="VXb-c7-esb" kind="relationship" relationship="viewControllers" id="Jpa-Vg-vyc"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HuB-VB-40B" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="0.0" y="0.0"/>
         </scene>
+        <!--About-->
+        <scene sceneID="kxv-WC-x86">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" modalTransitionStyle="flipHorizontal" id="VXb-c7-esb" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="About" image="information-outline-dark" id="jiw-e0-wcT"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="uw8-BL-i8j">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="KGQ-jI-dkv" kind="relationship" relationship="rootViewController" id="8rU-iA-ajl"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xUV-tz-rde" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-735" y="713"/>
+        </scene>
+        <!--speakerTab-->
+        <scene sceneID="dOh-87-Tpy">
+            <objects>
+                <viewControllerPlaceholder storyboardIdentifier="speakerTab" storyboardName="SpeakerTab" referencedIdentifier="speakerTab" id="WuQ-aW-VcD" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="cnt-FF-kBu"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ASg-O9-c5z" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="831" y="43"/>
+        </scene>
     </scenes>
     <resources>
         <image name="AndroidSummit_Logo" width="549" height="413"/>
-        <image name="account-multiple-dark" width="24" height="24"/>
         <image name="calendar-dark" width="24" height="24"/>
         <image name="information-outline-dark" width="24" height="24"/>
     </resources>

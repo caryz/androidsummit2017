@@ -9,6 +9,11 @@
 import Foundation
 import UIKit
 
+enum SegueId: String {
+    case eventDetails = "showEventDetails"
+    case tabBarSegue = "TabBarSegue"
+}
+
 enum EventFieldsEnum: String {
     case title = "title"
     case description = "description"
