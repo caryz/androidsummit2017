@@ -107,17 +107,29 @@ class ScheduleTableViewController: UIViewController, UITableViewDelegate, UITabl
         cell.configure(title: event.title, time: timeText, speaker: event.speaker)
 
         let colors = TrackColors()
+        cell.blockView.backgroundColor = UIColor.white
         switch event.track {
         case .Design:
-            cell.blockView.backgroundColor = colors.Design
+            buildTopBorder(colors.Design, view: cell.blockView)
+            //cell.blockView.backgroundColor = colors.Design
         case .Development:
-            cell.blockView.backgroundColor = colors.Development
+            buildTopBorder(colors.Development, view: cell.blockView)
+            //cell.blockView.backgroundColor = colors.Development
         case .Testing:
-            cell.blockView.backgroundColor = colors.Testing
+            buildTopBorder(colors.Testing, view: cell.blockView)
+            //cell.blockView.backgroundColor = colors.Testing
         default:
             cell.blockView.backgroundColor = UIColor.white
         }
         return cell
+    }
+
+    func buildTopBorder(_ withColor: UIColor, view: UIView) {
+        let upperBorder = CALayer()
+        upperBorder.backgroundColor = withColor.cgColor
+        upperBorder.frame = CGRect(x: 0, y: 0, width: view.frame.width, height: 10)
+        //upperBorder.frame = CGRect(x: 0, y: 0, width: 15, height: view.frame.height)
+        view.layer.addSublayer(upperBorder)
     }
 
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {

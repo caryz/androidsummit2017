@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		4A4D28C91F2970F400B056D6 /* SpeakerTab.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4A4D28C71F2970F400B056D6 /* SpeakerTab.storyboard */; };
+		4A4D28CB1F297B3900B056D6 /* BoxyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A4D28CA1F297B3900B056D6 /* BoxyView.swift */; };
+		4A4D28CD1F297B4300B056D6 /* BoxyView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4A4D28CC1F297B4300B056D6 /* BoxyView.xib */; };
 		4A75379D1F23990D002559F3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A75379C1F23990D002559F3 /* AppDelegate.swift */; };
 		4A75379F1F23990D002559F3 /* ScheduleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A75379E1F23990D002559F3 /* ScheduleViewController.swift */; };
 		4A7537A11F23990D002559F3 /* SpeakersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A7537A01F23990D002559F3 /* SpeakersViewController.swift */; };
@@ -52,6 +54,8 @@
 		144184CDB4D4D6ADC132B1E4 /* Pods-guide-for-android-summit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-guide-for-android-summit.release.xcconfig"; path = "Pods/Target Support Files/Pods-guide-for-android-summit/Pods-guide-for-android-summit.release.xcconfig"; sourceTree = "<group>"; };
 		1E3CEBDDD519B945EAD12866 /* Pods-guide-for-android-summit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-guide-for-android-summit.debug.xcconfig"; path = "Pods/Target Support Files/Pods-guide-for-android-summit/Pods-guide-for-android-summit.debug.xcconfig"; sourceTree = "<group>"; };
 		4A4D28C81F2970F400B056D6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/SpeakerTab.storyboard; sourceTree = "<group>"; };
+		4A4D28CA1F297B3900B056D6 /* BoxyView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BoxyView.swift; sourceTree = "<group>"; };
+		4A4D28CC1F297B4300B056D6 /* BoxyView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BoxyView.xib; sourceTree = "<group>"; };
 		4A7537991F23990D002559F3 /* guide-for-android-summit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "guide-for-android-summit.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4A75379C1F23990D002559F3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4A75379E1F23990D002559F3 /* ScheduleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleViewController.swift; sourceTree = "<group>"; };
@@ -192,6 +196,8 @@
 			children = (
 				4A9BCC481F270133007C0964 /* EventCell.swift */,
 				4A9BCC501F27E241007C0964 /* EventDetailsViewController.swift */,
+				4A4D28CA1F297B3900B056D6 /* BoxyView.swift */,
+				4A4D28CC1F297B4300B056D6 /* BoxyView.xib */,
 			);
 			name = views;
 			sourceTree = "<group>";
@@ -362,6 +368,7 @@
 			files = (
 				4A7537A91F23990D002559F3 /* LaunchScreen.storyboard in Resources */,
 				4A7537CE1F23A014002559F3 /* GoogleService-Info.plist in Resources */,
+				4A4D28CD1F297B4300B056D6 /* BoxyView.xib in Resources */,
 				4A7537A61F23990D002559F3 /* Assets.xcassets in Resources */,
 				4A9BCC411F26DCB3007C0964 /* ScheduleTab.storyboard in Resources */,
 				4A4D28C91F2970F400B056D6 /* SpeakerTab.storyboard in Resources */,
@@ -538,6 +545,7 @@
 				4AEB11A71F246E9A00639E45 /* Event.swift in Sources */,
 				4A9BCC4D1F27019A007C0964 /* Utilities.swift in Sources */,
 				4A9BCC511F27E241007C0964 /* EventDetailsViewController.swift in Sources */,
+				4A4D28CB1F297B3900B056D6 /* BoxyView.swift in Sources */,
 				4AEB11A21F246DA400639E45 /* InfoViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

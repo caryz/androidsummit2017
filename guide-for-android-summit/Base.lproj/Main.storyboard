@@ -71,18 +71,39 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" text="Info" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="smn-gG-5e8">
-                                <rect key="frame" x="111" y="313" width="152.5" height="42"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="36"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tty-zV-ssx">
+                                <rect key="frame" x="0.0" y="64" width="375" height="554"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="kiw-Ol-HDM">
+                                        <rect key="frame" x="0.0" y="-64" width="375" height="100"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="100" placeholder="YES" id="haT-Bd-Ypg"/>
+                                        </constraints>
+                                        <edgeInsets key="layoutMargins" top="15" left="15" bottom="10" right="15"/>
+                                    </stackView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="kiw-Ol-HDM" firstAttribute="width" secondItem="tty-zV-ssx" secondAttribute="width" id="16E-FU-u6c"/>
+                                    <constraint firstItem="kiw-Ol-HDM" firstAttribute="top" secondItem="tty-zV-ssx" secondAttribute="top" constant="-64" id="ToX-7z-NoC"/>
+                                    <constraint firstAttribute="trailing" secondItem="kiw-Ol-HDM" secondAttribute="trailing" id="i0P-zL-0Ud"/>
+                                    <constraint firstItem="kiw-Ol-HDM" firstAttribute="leading" secondItem="tty-zV-ssx" secondAttribute="leading" id="lTm-l0-R9D"/>
+                                    <constraint firstAttribute="bottom" secondItem="kiw-Ol-HDM" secondAttribute="bottom" id="nJb-la-Z59"/>
+                                </constraints>
+                            </scrollView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="tty-zV-ssx" firstAttribute="top" secondItem="Cnc-5H-DcQ" secondAttribute="bottom" id="7IQ-G4-lfh"/>
+                            <constraint firstAttribute="trailing" secondItem="tty-zV-ssx" secondAttribute="trailing" id="OCT-d6-5th"/>
+                            <constraint firstItem="tty-zV-ssx" firstAttribute="leading" secondItem="DHO-j8-Jw8" secondAttribute="leading" id="QSk-QI-SGW"/>
+                            <constraint firstItem="fch-dm-Xmc" firstAttribute="top" secondItem="tty-zV-ssx" secondAttribute="bottom" id="ejm-bA-mhF"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="About" id="Xlg-IV-yMF"/>
+                    <connections>
+                        <outlet property="contentStack" destination="kiw-Ol-HDM" id="hVa-31-JqR"/>
+                        <outlet property="scrollView" destination="tty-zV-ssx" id="afm-Vr-b2T"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5fd-Ab-xpt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
