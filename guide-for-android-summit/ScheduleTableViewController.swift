@@ -9,7 +9,10 @@
 import UIKit
 import Firebase
 
-class ScheduleTableViewController: UITableViewController {
+class ScheduleTableViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+
+    @IBOutlet weak var loadingSpinner: UIActivityIndicatorView!
+    @IBOutlet weak var tableView: UITableView!
 
     // MARK: - Instance Variables
     let cellReuseIdentifier = "customEventCell"
@@ -44,6 +47,7 @@ class ScheduleTableViewController: UITableViewController {
     func configureTableView() {
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.estimatedRowHeight = 150
+        loadingSpinner.startAnimating()
     }
 
     func fetchSchedule() {
@@ -55,14 +59,16 @@ class ScheduleTableViewController: UITableViewController {
             for e in self.events {
                 print(e.startTime)
             }
+
+            sleep(1)
             self.populateTimeTable()
+            self.loadingSpinner.stopAnimating()
             self.tableView.reloadData()
             // stop spinner here spinner
         })
     }
 
     func populateTimeTable() {
-        //var i: Int = -1
         var lastTime: TimeInterval = 0
 
         for event in events {
@@ -73,7 +79,6 @@ class ScheduleTableViewController: UITableViewController {
                 // add row
                 timeTable[timeTable.count-1].append(event)
             }
-
             lastTime = event.startTime
         }
         print("Total: \(timeTable.count) sections")
@@ -87,15 +92,15 @@ class ScheduleTableViewController: UITableViewController {
 
     // MARK: - Table view data source
 
-    override func numberOfSections(in tableView: UITableView) -> Int {
+    func numberOfSections(in tableView: UITableView) -> Int {
         return timeTable.count
     }
 
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return timeTable[section].count
     }
 
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: cellReuseIdentifier, for: indexPath) as! EventCell
 
         let event = timeTable[indexPath.section][indexPath.row]
@@ -114,7 +119,7 @@ class ScheduleTableViewController: UITableViewController {
         return cell
     }
 
-    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         return convertToAMPM(timeTable[section][0].startTime)
     }
 
