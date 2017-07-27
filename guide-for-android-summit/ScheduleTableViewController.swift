@@ -22,6 +22,8 @@ class ScheduleTableViewController: UIViewController, UITableViewDelegate, UITabl
     var eventCount: Int = 0
     var eventToPass: Event?
 
+    // TODO: make search controller and add SegmentControl
+
     var timeTable = [[Event]]()// each row is [section row row row]
     var didFinishFetching: Bool = false {
         didSet {
@@ -63,6 +65,7 @@ class ScheduleTableViewController: UIViewController, UITableViewDelegate, UITabl
             sleep(1)
             self.populateTimeTable()
             self.loadingSpinner.stopAnimating()
+            UIApplication.shared.statusBarView?.backgroundColor = .white
             self.tableView.reloadData()
         })
     }

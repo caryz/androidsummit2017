@@ -13,4 +13,11 @@ class LoginViewController: UIViewController {
     @IBAction func loginButton(_ sender: UIButton) {
         performSegue(withIdentifier: SegueId.tabBarSegue.rawValue, sender: nil)
     }
+    
+}
+
+extension UIApplication {
+    var statusBarView: UIView? {
+        return value(forKey: "statusBar") as? UIView
+    }
 }
