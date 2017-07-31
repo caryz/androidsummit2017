@@ -43,9 +43,9 @@ struct PersonFields {
 }
 
 struct TrackColors {
-    let Development = UIColor(red: 1, green: 0.698, blue: 0.698, alpha: 1.0)
-    let Design = UIColor(red: 0.698, green: 0.8431, blue: 1, alpha: 1.0)
-    let Testing = UIColor(red: 0.698, green: 1, blue: 0.7569, alpha: 1.0)
+    let Development = UIColor(red: 108/255, green: 68/255, blue: 184/255, alpha: 1.0) // #6C44B8
+    let Design = UIColor(red: 231/255, green: 98/255, blue: 48/255, alpha: 1.0) // #E76230
+    let Testing = UIColor(red: 62/255, green: 141/255, blue: 214/255, alpha: 1.0) // #3E8DD6
     let defaultColor = UIColor.lightGray
 
     func getColor(_ track: EventTrack) -> UIColor {

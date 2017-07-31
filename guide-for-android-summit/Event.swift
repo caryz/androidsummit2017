@@ -72,12 +72,12 @@ struct Event {
     }
 
     func getStartTimeComp() -> DateComponents {
-        return Calendar.current.dateComponents([.day, .hour, .minute],
+        return Calendar.current.dateComponents([.month, .day, .hour, .minute],
                                                from: convertIntervalToDate(self.startTime))
     }
 
     func getEndTimeComp() -> DateComponents {
-        return Calendar.current.dateComponents([.day, .hour, .minute],
+        return Calendar.current.dateComponents([.month, .day, .hour, .minute],
                                                from: convertIntervalToDate(self.endTime))
     }
 }

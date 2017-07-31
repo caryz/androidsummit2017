@@ -13,7 +13,8 @@ class ScheduleTableViewController: UIViewController, UITableViewDelegate, UITabl
 
     @IBOutlet weak var loadingSpinner: UIActivityIndicatorView!
     @IBOutlet weak var tableView: UITableView!
-
+    @IBOutlet weak var bookmarkButton: UIBarButtonItem!
+    
     // MARK: - Instance Variables
     let cellReuseIdentifier = "customEventCell"
     var events = [Event]()
@@ -21,10 +22,14 @@ class ScheduleTableViewController: UIViewController, UITableViewDelegate, UITabl
     var sectionCount: Int = 0
     var eventCount: Int = 0
     var eventToPass: Event?
+    var dayIndex: Int = 0
 
     // TODO: make search controller and add SegmentControl
 
-    var timeTable = [[Event]]()// each row is [section row row row]
+    // first layer = thurs/fri; second layer = time section; third layer = time rows
+    var timeTable = [[[Event]]]()
+    var savedEvents = [Event]()
+
     var didFinishFetching: Bool = false {
         didSet {
             if didFinishFetching == true {
@@ -43,6 +48,9 @@ class ScheduleTableViewController: UIViewController, UITableViewDelegate, UITabl
         tableView.estimatedRowHeight = 100
         tableView.rowHeight = UITableViewAutomaticDimension
         loadingSpinner.startAnimating()
+
+        timeTable.append([[Event]]())
+        timeTable.append([[Event]]())
     }
 
     func fetchSchedule() {
@@ -55,7 +63,7 @@ class ScheduleTableViewController: UIViewController, UITableViewDelegate, UITabl
                 print(e.startTime)
             }
 
-            //sleep(1)
+            sleep(1)
             self.populateTimeTable()
             self.loadingSpinner.stopAnimating()
             UIApplication.shared.statusBarView?.backgroundColor = .white
@@ -67,32 +75,73 @@ class ScheduleTableViewController: UIViewController, UITableViewDelegate, UITabl
         var lastTime: TimeInterval = 0
 
         for event in events {
-            if event.startTime != lastTime {
-                // add section
-                timeTable.append([event])
+            if event.getStartTimeComp().month == 8 && event.getStartTimeComp().day == 24 {
+                if event.startTime != lastTime {
+                    timeTable[0].append([event])
+                } else {
+                    timeTable[0][timeTable[0].count-1].append(event)
+                }
             } else {
-                // add row
-                timeTable[timeTable.count-1].append(event)
+                if event.startTime != lastTime {
+                    timeTable[1].append([event])
+                } else {
+                    timeTable[1][timeTable[1].count-1].append(event)
+                }
             }
             lastTime = event.startTime
         }
     }
 
+    // MARK: - SegmentController
+
+    @IBAction func didChangeIndex(_ sender: UISegmentedControl) {
+        dayIndex = sender.selectedSegmentIndex
+        tableView.reloadData()
+    }
+
+    @IBAction func bookmarkButtonTapped(_ sender: UIButton) {
+        guard let indexPath = tableView.indexPathForView(view: sender) else { return }
+        print("tapped \(indexPath)")
+        let cell = tableView.cellForRow(at: indexPath)
+        let event = timeTable[dayIndex][indexPath.section][indexPath.row]
+
+        // save event
+        savedEvents.append(event)
+
+//        let image = UIImage(named: "bookmark-plus-dark")
+//        bookMarkButton.setBackgroundImage(image, for: .normal)
+//        bookMarkButton.setBackgroundImage(UIImage(named: "bookmark-check-dark"), for: .normal)
+
+        // hook up firebase stuff
+
+    }
+
+    func tableView(_ tableView: UITableView, accessoryButtonTappedForRowWith indexPath: IndexPath) {
+        print("tapped \(indexPath)")
+    }
+
     // MARK: - Table view data source
 
     func numberOfSections(in tableView: UITableView) -> Int {
-        return timeTable.count
+        if timeTable.isEmpty {
+            return 1
+        }
+        return timeTable[dayIndex].count
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return timeTable[section].count
+        if timeTable.isEmpty {
+            return 1
+        }
+        return timeTable[dayIndex][section].count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        if timeTable.isEmpty { return UITableViewCell() }
         let cell = tableView.dequeueReusableCell(withIdentifier: cellReuseIdentifier, for: indexPath) as! EventCell
         let colors = TrackColors()
 
-        let event = timeTable[indexPath.section][indexPath.row]
+        let event = timeTable[dayIndex][indexPath.section][indexPath.row]
         let timeText = "\(event.getStartTime())-\(event.getEndTime())"
         cell.blockView.backgroundColor = UIColor.white
         cell.configure(title: event.title, time: timeText, speaker: event.speaker,
@@ -102,7 +151,10 @@ class ScheduleTableViewController: UIViewController, UITableViewDelegate, UITabl
     }
 
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return convertToAMPM(timeTable[section][0].startTime)
+        if timeTable.isEmpty {
+            return ""
+        }
+        return convertToAMPM(timeTable[dayIndex][section][0].startTime)
     }
 
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -114,7 +166,7 @@ class ScheduleTableViewController: UIViewController, UITableViewDelegate, UITabl
             // initialize new view controller and cast it as your view controller
             let viewController = segue.destination as? EventDetailsViewController
             if let indexPath = tableView.indexPathForSelectedRow {
-                viewController?.event = timeTable[indexPath.section][indexPath.row]
+                viewController?.event = timeTable[dayIndex][indexPath.section][indexPath.row]
             }
         }
     }
@@ -164,4 +216,11 @@ class ScheduleTableViewController: UIViewController, UITableViewDelegate, UITabl
     }
     */
 
+}
+
+extension UITableView {
+    func indexPathForView (view : UIView) -> IndexPath? {
+        let location = view.convert(CGPoint.zero, to: self)
+        return indexPathForRow(at: location)
+    }
 }
