@@ -14,6 +14,7 @@ class EventCell: UITableViewCell {
     @IBOutlet weak var speakerLabel: UILabel!
 
     @IBOutlet weak var blockView: UIView!
+    @IBOutlet weak var leftBarView: UIView!
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -28,10 +29,11 @@ class EventCell: UITableViewCell {
         //layer.masksToBounds = false
     }
 
-    func configure(title: String, time: String, speaker: String) {
+    func configure(title: String, time: String, speaker: String, color: UIColor? = .white) {
         self.titleLabel?.text = title
         self.timeLabel?.text = time
         self.speakerLabel?.text = speaker
+        self.leftBarView?.backgroundColor = color
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

@@ -90,32 +90,15 @@ class ScheduleTableViewController: UIViewController, UITableViewDelegate, UITabl
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: cellReuseIdentifier, for: indexPath) as! EventCell
+        let colors = TrackColors()
 
         let event = timeTable[indexPath.section][indexPath.row]
         let timeText = "\(event.getStartTime()) - \(event.getEndTime())"
-        cell.configure(title: event.title, time: timeText, speaker: event.speaker)
-
-        let colors = TrackColors()
         cell.blockView.backgroundColor = UIColor.white
-        switch event.track {
-        case .Design:
-            buildTopBorder(colors.Design, view: cell.blockView)
-        case .Development:
-            buildTopBorder(colors.Development, view: cell.blockView)
-        case .Testing:
-            buildTopBorder(colors.Testing, view: cell.blockView)
-        default:
-            cell.blockView.backgroundColor = UIColor.white
-        }
-        return cell
-    }
+        cell.configure(title: event.title, time: timeText, speaker: event.speaker,
+                       color: colors.getColor(event.track))
 
-    func buildTopBorder(_ withColor: UIColor, view: UIView) {
-        let upperBorder = CALayer()
-        upperBorder.backgroundColor = withColor.cgColor
-        upperBorder.frame = CGRect(x: 0, y: 0, width: view.frame.width, height: 10)
-        //upperBorder.frame = CGRect(x: 0, y: 0, width: 15, height: view.frame.height)
-        view.layer.addSublayer(upperBorder)
+        return cell
     }
 
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {

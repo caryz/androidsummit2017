@@ -36,8 +36,15 @@
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bKO-ru-hXT" userLabel="blockView">
                                                     <rect key="frame" x="8" y="8" width="359" height="134"/>
                                                     <subviews>
+                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IZO-EQ-6WZ" userLabel="LeftBarView">
+                                                            <rect key="frame" x="0.0" y="0.0" width="10" height="134"/>
+                                                            <color key="backgroundColor" red="0.87932343719999995" green="1" blue="0.85420528009999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" constant="10" id="6Dd-DD-scL"/>
+                                                            </constraints>
+                                                        </view>
                                                         <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3dB-v4-WTI">
-                                                            <rect key="frame" x="0.0" y="0.0" width="359" height="134"/>
+                                                            <rect key="frame" x="15" y="0.0" width="344" height="134"/>
                                                             <subviews>
                                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="cSR-CQ-ELQ" userLabel="Icon">
                                                                     <rect key="frame" x="0.0" y="0.0" width="80" height="134"/>
@@ -58,24 +65,24 @@
                                                                     </subviews>
                                                                 </stackView>
                                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="Jl3-A3-2zl" userLabel="Content">
-                                                                    <rect key="frame" x="80" y="0.0" width="279" height="134"/>
+                                                                    <rect key="frame" x="80" y="0.0" width="264" height="134"/>
                                                                     <subviews>
                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="14" translatesAutoresizingMaskIntoConstraints="NO" id="Bm5-26-emk">
-                                                                            <rect key="frame" x="10" y="5" width="259" height="81.5"/>
+                                                                            <rect key="frame" x="10" y="5" width="244" height="81.5"/>
                                                                             <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
                                                                             <nil key="highlightedColor"/>
                                                                         </label>
                                                                         <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="YBP-qB-7Vn" userLabel="Time Speaker">
-                                                                            <rect key="frame" x="10" y="86.5" width="259" height="42.5"/>
+                                                                            <rect key="frame" x="10" y="86.5" width="244" height="42.5"/>
                                                                             <subviews>
                                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="IBs-J6-yvs">
-                                                                                    <rect key="frame" x="0.0" y="0.0" width="129.5" height="42.5"/>
+                                                                                    <rect key="frame" x="0.0" y="0.0" width="122" height="42.5"/>
                                                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                                                     <nil key="textColor"/>
                                                                                     <nil key="highlightedColor"/>
                                                                                 </label>
                                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Speaker" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="cxe-sR-kyk">
-                                                                                    <rect key="frame" x="129.5" y="0.0" width="129.5" height="42.5"/>
+                                                                                    <rect key="frame" x="122" y="0.0" width="122" height="42.5"/>
                                                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                                                     <nil key="textColor"/>
                                                                                     <nil key="highlightedColor"/>
@@ -100,8 +107,11 @@
                                                     <constraints>
                                                         <constraint firstAttribute="bottom" secondItem="3dB-v4-WTI" secondAttribute="bottom" id="0f3-Xt-LbS"/>
                                                         <constraint firstItem="3dB-v4-WTI" firstAttribute="top" secondItem="bKO-ru-hXT" secondAttribute="top" id="8Xf-Bq-QFe"/>
+                                                        <constraint firstAttribute="bottom" secondItem="IZO-EQ-6WZ" secondAttribute="bottom" id="BaA-eM-Uq3"/>
                                                         <constraint firstAttribute="trailing" secondItem="3dB-v4-WTI" secondAttribute="trailing" id="eTt-kb-aGd"/>
-                                                        <constraint firstItem="3dB-v4-WTI" firstAttribute="leading" secondItem="bKO-ru-hXT" secondAttribute="leading" id="nk1-no-R9R"/>
+                                                        <constraint firstItem="IZO-EQ-6WZ" firstAttribute="leading" secondItem="bKO-ru-hXT" secondAttribute="leading" id="jtD-14-DQ4"/>
+                                                        <constraint firstItem="3dB-v4-WTI" firstAttribute="leading" secondItem="IZO-EQ-6WZ" secondAttribute="trailing" constant="5" id="swg-ON-QeC"/>
+                                                        <constraint firstItem="IZO-EQ-6WZ" firstAttribute="top" secondItem="bKO-ru-hXT" secondAttribute="top" id="x4i-AO-dXJ"/>
                                                     </constraints>
                                                 </view>
                                             </subviews>
@@ -114,6 +124,7 @@
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="blockView" destination="bKO-ru-hXT" id="tto-5u-DNY"/>
+                                            <outlet property="leftBarView" destination="IZO-EQ-6WZ" id="zbn-o4-HHh"/>
                                             <outlet property="speakerLabel" destination="cxe-sR-kyk" id="PL3-u6-o9k"/>
                                             <outlet property="timeLabel" destination="IBs-J6-yvs" id="xKD-bg-6Uq"/>
                                             <outlet property="titleLabel" destination="Bm5-26-emk" id="H04-zO-joz"/>
