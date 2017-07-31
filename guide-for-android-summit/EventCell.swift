@@ -22,8 +22,8 @@ class EventCell: UITableViewCell {
     }
 
     func addShadowToCell() {
-        blockView.layer.shadowColor = UIColor.black.withAlphaComponent(0.5).cgColor
-        blockView.layer.shadowOffset = CGSize(width: 2, height: 2)
+        blockView.layer.shadowColor = UIColor.black.withAlphaComponent(0.2).cgColor
+        blockView.layer.shadowOffset = CGSize(width: 1, height: 1)
         blockView.layer.shadowOpacity = 1
         //layer.shadowRadius = 0
         //layer.masksToBounds = false

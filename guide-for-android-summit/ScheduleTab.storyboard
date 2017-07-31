@@ -39,7 +39,7 @@
                                 <rect key="frame" x="0.0" y="35" width="375" height="568"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="customEventCell" rowHeight="150" id="1dn-dX-Lwr" customClass="EventCell" customModule="guide_for_android_summit" customModuleProvider="target">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="customEventCell" rowHeight="150" id="1dn-dX-Lwr" customClass="EventCell" customModule="guide_for_android_summit" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="150"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="1dn-dX-Lwr" id="prv-QW-IWR">
@@ -78,22 +78,22 @@
                                                                     <rect key="frame" x="40" y="0.0" width="304" height="134"/>
                                                                     <subviews>
                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="14" translatesAutoresizingMaskIntoConstraints="NO" id="Bm5-26-emk">
-                                                                            <rect key="frame" x="10" y="5" width="284" height="107"/>
-                                                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                                                            <rect key="frame" x="10" y="5" width="284" height="105.5"/>
+                                                                            <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="18"/>
                                                                             <nil key="highlightedColor"/>
                                                                         </label>
                                                                         <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="YBP-qB-7Vn" userLabel="Time Speaker">
-                                                                            <rect key="frame" x="10" y="112" width="284" height="17"/>
+                                                                            <rect key="frame" x="10" y="110.5" width="284" height="18.5"/>
                                                                             <subviews>
                                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="IBs-J6-yvs">
-                                                                                    <rect key="frame" x="0.0" y="0.0" width="107" height="17"/>
-                                                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                                                    <rect key="frame" x="0.0" y="0.0" width="104.5" height="18.5"/>
+                                                                                    <fontDescription key="fontDescription" name="Helvetica-Light" family="Helvetica" pointSize="16"/>
                                                                                     <nil key="textColor"/>
                                                                                     <nil key="highlightedColor"/>
                                                                                 </label>
                                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Speaker" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="cxe-sR-kyk">
-                                                                                    <rect key="frame" x="107" y="0.0" width="177" height="17"/>
-                                                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                                                    <rect key="frame" x="104.5" y="0.0" width="179.5" height="18.5"/>
+                                                                                    <fontDescription key="fontDescription" name="Helvetica-Light" family="Helvetica" pointSize="16"/>
                                                                                     <nil key="textColor"/>
                                                                                     <nil key="highlightedColor"/>
                                                                                 </label>
@@ -166,7 +166,11 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Schedule" id="CTz-B8-KxZ">
-                        <barButtonItem key="rightBarButtonItem" image="bookmark-outline-dark" id="hVU-Zs-QTM" userLabel="Bookmark Button"/>
+                        <barButtonItem key="rightBarButtonItem" image="bookmark-outline-dark" id="hVU-Zs-QTM" userLabel="Bookmark Button">
+                            <connections>
+                                <action selector="bookMarkToggleTapped:" destination="8NL-Zm-P7n" id="6Le-K3-tAU"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="bookmarkButton" destination="hVU-Zs-QTM" id="x17-pw-FXL"/>
