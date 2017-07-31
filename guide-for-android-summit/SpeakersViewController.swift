@@ -30,6 +30,7 @@ class SpeakersViewController: UIViewController, UITableViewDataSource, UITableVi
             for item in snapshot.children {
                 let speaker = Person(snapshot: item as! DataSnapshot)
                 self.speakers.append(speaker)
+                //print(speaker.key)
             }
 
             self.tableView.reloadData()
@@ -74,7 +75,7 @@ class SpeakersViewController: UIViewController, UITableViewDataSource, UITableVi
 
     // MARK: - Helper Methods
     func fetchImage(_ url: String, forIndexPath: IndexPath) {
-        let pic = URL(string: url)!
+        guard let pic = URL(string: url) else { return }
 
         let session = URLSession(configuration: .default)
 

@@ -11,7 +11,7 @@ import Firebase
 
 struct Person {
     let company: String // "Android Engineer at Trello, GDE"
-    let description: String
+    let description: [String]
     let eventId: Int //"Huyen is an Android developer and Google Develo..."
     let avatar: String //"http://androidsummit.org/2016/img/speakers/huye..."
     let fullName: String
@@ -20,7 +20,7 @@ struct Person {
     let key: String
     let ref: DatabaseReference?
 
-    init(fullName: String, company: String, description: String, img: String,
+    init(fullName: String, company: String, description: [String], img: String,
          eventId: Int, key: String) {
         self.fullName = fullName
         self.company = company
@@ -33,18 +33,16 @@ struct Person {
 
     init(snapshot: DataSnapshot) {
         let snapshotValue = snapshot.value as! [String: AnyObject]
-        let s = SpeakerFields()
+        let p = PersonFields()
 
-        fullName = snapshotValue[s.fullName] as? String ?? "Empty Name"
-        company = snapshotValue[s.company] as? String ?? "Empty Company"
-        description = snapshotValue[s.description] as? String ?? "Empty Description"
-        avatar = snapshotValue[s.avatar] as? String ?? "no url"
-        eventId = snapshotValue[s.eventId] as? Int ?? -1
+        fullName = snapshotValue[p.fullName] as? String ?? "Empty Name"
+        company = snapshotValue[p.company] as? String ?? "Empty Company"
+        description = snapshotValue[p.description] as? [String] ?? ["Empty Description"]
+        avatar = snapshotValue[p.avatar] as? String ?? "no url"
+        eventId = snapshotValue[p.eventId] as? Int ?? -1
         key = snapshot.key
         ref = snapshot.ref
     }
-
-    // TODO: init with snapshot
 
     func toAnyObject() -> Any {
         return [

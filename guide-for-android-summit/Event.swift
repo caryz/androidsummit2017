@@ -27,7 +27,7 @@ struct Event {
 
     // MARK: Instance Variables & Init
     let title: String
-    let description: String
+    let description: [String]
     let startTime: TimeInterval
     let endTime: TimeInterval
     let track: EventTrack
@@ -37,7 +37,7 @@ struct Event {
     let key: String
     let ref: DatabaseReference?
 
-    init(title: String, description: String, startTime: TimeInterval, endTime: TimeInterval,
+    init(title: String, description: [String], startTime: TimeInterval, endTime: TimeInterval,
          track: EventTrack, speaker: String, key: String) {
         self.title = title
         self.description = description
@@ -53,7 +53,7 @@ struct Event {
         let snapshotValue = snapshot.value as! [String: AnyObject]
         let e = EventFields()
         title = snapshotValue[e.title] as? String ?? "Empty Title"
-        description = snapshotValue[e.description] as? String ?? "Empty Description"
+        description = snapshotValue[e.description] as? [String] ?? ["Empty Description"]
         startTime = snapshotValue[e.startTime] as? TimeInterval ?? 0
         endTime = snapshotValue[e.endTime] as? TimeInterval ?? 0
         track = EventTrack(rawValue: snapshotValue[e.track] as? Int ?? -1)!

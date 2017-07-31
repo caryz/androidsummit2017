@@ -34,9 +34,8 @@ class EventDetailsViewController: UIViewController {
         titleLabel.text = event.title
         timeLabel.text = "\(event.getStartTime())-\(event.getEndTime())"
 
-        //headerBackgroundView.backgroundColor = trackColor
-
-        addBoxyView(title: "Description", content: event.description, color: trackColor)
+        addBoxyView(title: "Description", content:
+            paragraphFrom(description: event.description), color: trackColor)
         addBoxyView(title: "Speakers", content: nil, color: trackColor)
     }
 

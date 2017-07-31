@@ -93,7 +93,7 @@ class ScheduleTableViewController: UIViewController, UITableViewDelegate, UITabl
         let colors = TrackColors()
 
         let event = timeTable[indexPath.section][indexPath.row]
-        let timeText = "\(event.getStartTime()) - \(event.getEndTime())"
+        let timeText = "\(event.getStartTime())-\(event.getEndTime())"
         cell.blockView.backgroundColor = UIColor.white
         cell.configure(title: event.title, time: timeText, speaker: event.speaker,
                        color: colors.getColor(event.track))

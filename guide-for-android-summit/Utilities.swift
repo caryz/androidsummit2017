@@ -29,12 +29,12 @@ struct EventFields {
     let description = "description"
     let startTime = "start"
     let endTime = "end"
-    let track = "type"
+    let track = "track"
     let speaker = "speaker"
-    let location = "location" // new
+    let location = "location"
 }
 
-struct SpeakerFields {
+struct PersonFields {
     let fullName = "name"
     let company = "company"
     let description = "description"
@@ -62,13 +62,17 @@ struct TrackColors {
     }
 }
 
+func paragraphFrom(description: [String]) -> String {
+    return description.joined(separator: "\n\n")
+}
+
 func convertIntervalToDate(_ interval: TimeInterval) -> Date {
     return Date(timeIntervalSince1970: TimeInterval( interval / 1000))
 }
 
 func convertToAMPM(_ interval: TimeInterval) -> String {
     let formatter = DateFormatter()
-    formatter.dateFormat = "h:mm a"
+    formatter.dateFormat = "h:mma"
     formatter.amSymbol = "AM"
     formatter.pmSymbol = "PM"
     return formatter.string(from: convertIntervalToDate(interval))

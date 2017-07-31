@@ -32,7 +32,8 @@ class SpeakerDetailViewController: UIViewController {
     func configure() {
         guard let speaker = self.speaker else { return }
         nameLabel.text = speaker.fullName
-        addBoxyView(title: "Personal Summary", content: speaker.description, color: .red)
+        addBoxyView(title: "Personal Summary", content:
+            paragraphFrom(description: speaker.description), color: .red)
     }
 
     func addBoxyView(title: String?, content: String? = nil, color: UIColor? = nil) {

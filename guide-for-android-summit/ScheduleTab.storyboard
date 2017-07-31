@@ -64,25 +64,25 @@
                                                                         </label>
                                                                     </subviews>
                                                                 </stackView>
-                                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="Jl3-A3-2zl" userLabel="Content">
+                                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Jl3-A3-2zl" userLabel="Content">
                                                                     <rect key="frame" x="80" y="0.0" width="264" height="134"/>
                                                                     <subviews>
                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="14" translatesAutoresizingMaskIntoConstraints="NO" id="Bm5-26-emk">
-                                                                            <rect key="frame" x="10" y="5" width="244" height="81.5"/>
-                                                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
+                                                                            <rect key="frame" x="10" y="5" width="244" height="107"/>
+                                                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                                                             <nil key="highlightedColor"/>
                                                                         </label>
-                                                                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="YBP-qB-7Vn" userLabel="Time Speaker">
-                                                                            <rect key="frame" x="10" y="86.5" width="244" height="42.5"/>
+                                                                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="YBP-qB-7Vn" userLabel="Time Speaker">
+                                                                            <rect key="frame" x="10" y="112" width="244" height="17"/>
                                                                             <subviews>
                                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="IBs-J6-yvs">
-                                                                                    <rect key="frame" x="0.0" y="0.0" width="122" height="42.5"/>
+                                                                                    <rect key="frame" x="0.0" y="0.0" width="92" height="17"/>
                                                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                                                     <nil key="textColor"/>
                                                                                     <nil key="highlightedColor"/>
                                                                                 </label>
                                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Speaker" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="cxe-sR-kyk">
-                                                                                    <rect key="frame" x="122" y="0.0" width="122" height="42.5"/>
+                                                                                    <rect key="frame" x="92" y="0.0" width="152" height="17"/>
                                                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                                                     <nil key="textColor"/>
                                                                                     <nil key="highlightedColor"/>
