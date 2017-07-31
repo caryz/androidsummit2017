@@ -18,6 +18,7 @@ class SpeakerDetailViewController: UIViewController {
 
     // MARK: Instance Variables
     var speaker: Person?
+    var speakerImage: UIImageView?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,23 +35,14 @@ class SpeakerDetailViewController: UIViewController {
         nameLabel.text = speaker.fullName
         addBoxyView(title: "Personal Summary", content:
             paragraphFrom(description: speaker.description), color: .red)
+        if let img = speakerImage {
+            self.imageView.image = img.image
+        }
     }
 
     func addBoxyView(title: String?, content: String? = nil, color: UIColor? = nil) {
         let box = BoxyView.instanceFromNib()
         box.configure(title, content: content, color: color)
         contentStack.addArrangedSubview(box)
-    }
-}
-
-extension UIImageView {
-
-    func setRounded() {
-        let radius = (self.bounds.size.width) / 2
-        self.layer.cornerRadius = radius
-        self.layer.masksToBounds = true
-        self.clipsToBounds = true
-        self.layer.borderWidth = 2
-        self.layer.borderColor = UIColor.darkGray.cgColor
     }
 }

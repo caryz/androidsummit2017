@@ -38,7 +38,7 @@ struct PersonFields {
     let fullName = "name"
     let company = "company"
     let description = "description"
-    let avatar = "img"
+    let avatar = "avatar"
     let eventId = "eventId"
 }
 
