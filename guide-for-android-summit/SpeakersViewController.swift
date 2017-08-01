@@ -48,16 +48,16 @@ class SpeakersViewController: UIViewController, UITableViewDataSource, UITableVi
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: cellReuseIdentifier, for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: cellReuseIdentifier, for: indexPath) as! SpeakerCell
 
         let speaker = speakers[indexPath.row]
-        cell.textLabel?.text = speaker.fullName
-        cell.detailTextLabel?.text = speaker.company
-        cell.imageView?.image = UIImage(named: "user_placeholder")
-        //fetchImage(speaker.avatar, forIndexPath: indexPath)
-        cell.imageView?.imageFromServerURL(urlString: speaker.avatar)
+        cell.configure(name: speaker.fullName, company: speaker.company)
+        cell.speakerImage?.imageFromServerURL(urlString: speaker.avatar)
+//        cell.textLabel?.text = speaker.fullName
+//        cell.detailTextLabel?.text = speaker.company
+//        cell.imageView?.image = UIImage(named: "user_placeholder")
+//        cell.imageView?.imageFromServerURL(urlString: speaker.avatar)
         print(speaker.avatar)
-        //fetchImage("http://c.dryicons.com/images/icon_sets/shine_icon_set/png/256x256/business_user.png", forIndexPath: indexPath)
 
         return cell
     }
@@ -67,8 +67,8 @@ class SpeakersViewController: UIViewController, UITableViewDataSource, UITableVi
             let viewController = segue.destination as? SpeakerDetailViewController
             if let indexPath = tableView.indexPathForSelectedRow {
                 viewController?.speaker = speakers[indexPath.row]
-                let cell = self.tableView.cellForRow(at: indexPath)
-                if let imageView = cell?.imageView {
+                let cell = self.tableView.cellForRow(at: indexPath) as! SpeakerCell
+                if let imageView = cell.speakerImage {
                     //viewController?.imageView = imageView
                     viewController?.speakerImage = imageView
                 }
@@ -84,8 +84,8 @@ extension UIImageView {
         self.layer.cornerRadius = radius
         self.layer.masksToBounds = true
         self.clipsToBounds = true
-        self.layer.borderWidth = 2
-        self.layer.borderColor = UIColor.darkGray.cgColor
+        self.layer.borderWidth = 1
+        self.layer.borderColor = UIColor.gray.cgColor
     }
 
     public func imageFromServerURL(urlString: String) {
@@ -94,12 +94,13 @@ extension UIImageView {
         URLSession.shared.dataTask(with: avatarUrl as URL, completionHandler: { (data, response, error) -> Void in
 
             if error != nil {
-                print(error)
+                print(error.debugDescription)
                 return
             }
             DispatchQueue.main.async(execute: { () -> Void in
                 let image = UIImage(data: data!)
                 self.image = image
+                self.setRounded()
                 self.layoutSubviews()
             })
 

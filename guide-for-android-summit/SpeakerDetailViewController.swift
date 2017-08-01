@@ -12,6 +12,7 @@ import UIKit
 class SpeakerDetailViewController: UIViewController {
     // MARK: Outlets
 
+    @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var contentStack: UIStackView!
     @IBOutlet weak var nameLabel: UILabel!
@@ -22,18 +23,14 @@ class SpeakerDetailViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.automaticallyAdjustsScrollViewInsets = false
         configure()
-    }
-
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        imageView.setRounded()
     }
 
     func configure() {
         guard let speaker = self.speaker else { return }
         nameLabel.text = speaker.fullName
-        addBoxyView(title: "Personal Summary", content:
+        addBoxyView(title: speaker.fullName, content:
             paragraphFrom(description: speaker.description), color: .red)
         if let img = speakerImage {
             self.imageView.image = img.image
