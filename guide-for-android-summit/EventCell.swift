@@ -12,6 +12,7 @@ class EventCell: UITableViewCell {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var timeLabel: UILabel!
     @IBOutlet weak var speakerLabel: UILabel!
+    @IBOutlet weak var bookmark: ToggleButton!
 
     @IBOutlet weak var blockView: UIView!
     @IBOutlet weak var leftBarView: UIView!
@@ -29,11 +30,13 @@ class EventCell: UITableViewCell {
         //layer.masksToBounds = false
     }
 
-    func configure(title: String, time: String, speaker: String, color: UIColor? = .white) {
+    func configure(title: String, time: String, speaker: String,
+                   color: UIColor? = .white, checked: Bool = false) {
         self.titleLabel?.text = title
         self.timeLabel?.text = time
         self.speakerLabel?.text = speaker
         self.leftBarView?.backgroundColor = color
+        self.bookmark.isChecked = checked
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

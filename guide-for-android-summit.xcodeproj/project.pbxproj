@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		4A3682771F3009CE00C76B60 /* SpeakerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A3682761F3009CE00C76B60 /* SpeakerCell.swift */; };
+		4A3682791F32C63500C76B60 /* ToggleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A3682781F32C63500C76B60 /* ToggleButton.swift */; };
 		4A4D28C91F2970F400B056D6 /* SpeakerTab.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4A4D28C71F2970F400B056D6 /* SpeakerTab.storyboard */; };
 		4A4D28CB1F297B3900B056D6 /* BoxyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A4D28CA1F297B3900B056D6 /* BoxyView.swift */; };
 		4A4D28CD1F297B4300B056D6 /* BoxyView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4A4D28CC1F297B4300B056D6 /* BoxyView.xib */; };
@@ -56,6 +57,7 @@
 		144184CDB4D4D6ADC132B1E4 /* Pods-guide-for-android-summit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-guide-for-android-summit.release.xcconfig"; path = "Pods/Target Support Files/Pods-guide-for-android-summit/Pods-guide-for-android-summit.release.xcconfig"; sourceTree = "<group>"; };
 		1E3CEBDDD519B945EAD12866 /* Pods-guide-for-android-summit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-guide-for-android-summit.debug.xcconfig"; path = "Pods/Target Support Files/Pods-guide-for-android-summit/Pods-guide-for-android-summit.debug.xcconfig"; sourceTree = "<group>"; };
 		4A3682761F3009CE00C76B60 /* SpeakerCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpeakerCell.swift; sourceTree = "<group>"; };
+		4A3682781F32C63500C76B60 /* ToggleButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToggleButton.swift; sourceTree = "<group>"; };
 		4A4D28C81F2970F400B056D6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/SpeakerTab.storyboard; sourceTree = "<group>"; };
 		4A4D28CA1F297B3900B056D6 /* BoxyView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BoxyView.swift; sourceTree = "<group>"; };
 		4A4D28CC1F297B4300B056D6 /* BoxyView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BoxyView.xib; sourceTree = "<group>"; };
@@ -202,6 +204,7 @@
 				4A4D28CA1F297B3900B056D6 /* BoxyView.swift */,
 				4A4D28CC1F297B4300B056D6 /* BoxyView.xib */,
 				4A3682761F3009CE00C76B60 /* SpeakerCell.swift */,
+				4A3682781F32C63500C76B60 /* ToggleButton.swift */,
 			);
 			name = views;
 			sourceTree = "<group>";
@@ -542,6 +545,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4A9BCC441F26DD08007C0964 /* ScheduleTableViewController.swift in Sources */,
+				4A3682791F32C63500C76B60 /* ToggleButton.swift in Sources */,
 				4A9BCC4A1F270133007C0964 /* EventCell.swift in Sources */,
 				4AEB11A51F246E9000639E45 /* Person.swift in Sources */,
 				4AEB119F1F24670F00639E45 /* LoginViewController.swift in Sources */,

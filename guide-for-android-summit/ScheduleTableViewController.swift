@@ -27,7 +27,7 @@ class ScheduleTableViewController: UIViewController, UITableViewDelegate, UITabl
 
     var dayIndex: Int = 0 // for segmentControl
     var didFinishFetching: Bool = false
-    var fuckyou = false
+    var bookmarkButtonChecked = false
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -52,9 +52,6 @@ class ScheduleTableViewController: UIViewController, UITableViewDelegate, UITabl
                 let event = Event(snapshot: item as! DataSnapshot)
                 self.events.append(event)
             }
-            for e in self.events {
-                print(e.key)
-            }
 
             //sleep(1)
             self.populateTimeTable()
@@ -74,6 +71,7 @@ class ScheduleTableViewController: UIViewController, UITableViewDelegate, UITabl
                 if event.startTime != lastTime {
                     timeTable[0].append([event])
                     allEvents[0].append([event])
+                    print("---")
                 } else {
                     timeTable[0][timeTable[0].count-1].append(event)
                     allEvents[0][allEvents[0].count-1].append(event)
@@ -87,6 +85,7 @@ class ScheduleTableViewController: UIViewController, UITableViewDelegate, UITabl
                     allEvents[1][allEvents[1].count-1].append(event)
                 }
             }
+            print(event.key)
             lastTime = event.startTime
         }
     }
@@ -98,33 +97,30 @@ class ScheduleTableViewController: UIViewController, UITableViewDelegate, UITabl
         tableView.reloadData()
     }
 
-    @IBAction func bookmarkButtonTapped(_ sender: UIButton) {
-        // per cell
+    @IBAction func bookmarkButtonTapped(_ sender: ToggleButton) {
         guard let indexPath = tableView.indexPathForView(view: sender) else { return }
-        print("tapped \(indexPath)")
-        let cell = tableView.cellForRow(at: indexPath)
+        // TODO: hook up firebase stuff
         let event = timeTable[dayIndex][indexPath.section][indexPath.row]
+        var saved = false
 
-        // save event
-        savedEvents.append(event)
-        print("Saved \(event.title)")
-
-        let imagePlus = UIImage(named: "bookmark-plus-dark")
-        let imageCheck = UIImage(named: "bookmark-check-dark")
-
-        sender.setImage(sender.image(for: .normal) == imagePlus ?
-            imageCheck : imagePlus, for: .normal)
-
-//        bookMarkButton.setBackgroundImage(image, for: .normal)
-//        bookMarkButton.setBackgroundImage(UIImage(named: "bookmark-check-dark"), for: .normal)
-
-        // hook up firebase stuff
-
+        if let index = savedEvents.index(where: { $0 == event }) {
+            // remove event
+            saved = false
+            savedEvents.remove(at: index)
+            print("Unsaved: [\(event.title)] at [\(indexPath)")
+        } else {
+            // save event
+            saved = true
+            savedEvents.append(event)
+            print("Saved: [\(event.title)] at [\(indexPath)")
+        }
+        timeTable[dayIndex][indexPath.section][indexPath.row].saved = saved
+        allEvents[dayIndex][indexPath.section][indexPath.row].saved = saved
+        sender.isChecked = saved
     }
 
     @IBAction func bookMarkToggleTapped(_ sender: UIBarButtonItem) {
-        if fuckyou == false {
-            // delete appropriate
+        if bookmarkButtonChecked == false {
             var toDelete = [IndexPath]()
 
             for s in (0..<timeTable[dayIndex].count).reversed() {
@@ -138,8 +134,10 @@ class ScheduleTableViewController: UIViewController, UITableViewDelegate, UITabl
                     }
                 }
             }
-            tableView.deleteRows(at: toDelete, with: .automatic)
-            fuckyou = true
+
+            deleteAppropriateCells(toDelete)
+            bookmarkButtonChecked = true
+            toggleBookmark(true)
         } else {
             // add all rows
             var toInsert = [IndexPath]()
@@ -153,11 +151,13 @@ class ScheduleTableViewController: UIViewController, UITableViewDelegate, UITabl
                         print("Inserting: [\(event.title)] at [\(sec), \(row)]")
                     }
                 }
+                timeTable[dayIndex][sec] = allEvents[dayIndex][sec]
             }
+
             tableView.insertRows(at: toInsert, with: .automatic)
-            fuckyou = false
+            bookmarkButtonChecked = false
+            toggleBookmark(false)
         }
-        self.reloadSections()
     }
 
     // MARK: - Table view data source
@@ -178,7 +178,7 @@ class ScheduleTableViewController: UIViewController, UITableViewDelegate, UITabl
         let timeText = "\(event.getStartTime())-\(event.getEndTime())"
         cell.blockView.backgroundColor = UIColor.white
         cell.configure(title: event.title, time: timeText, speaker: event.speaker,
-                       color: colors.getColor(event.track))
+                       color: colors.getColor(event.track), checked: event.saved)
 
         return cell
     }
@@ -213,10 +213,38 @@ class ScheduleTableViewController: UIViewController, UITableViewDelegate, UITabl
         }
     }
 
-    func reloadSections() {
+    fileprivate func deleteAppropriateCells(_ toDelete: [IndexPath]) {
+        /* Rationale and Explanation
+         * You're probably looking at this goign wtf
+         * But this is for the smoothest animation possible during the edge case
+         * in which user deletes all rows and leaves a random section header
+         * sitting around. Maybe that's an Apple bug, but hey it is what it is.
+         */
+        CATransaction.begin()
+        tableView.beginUpdates()
+        CATransaction.setCompletionBlock {
+            // if empty, an extra section header gets left in there
+            if self.tableView.numberOfRows(inSection: 0) == 0 {
+                self.reloadSections()
+            }
+        }
+        tableView.deleteRows(at: toDelete, with: .automatic)
+        tableView.endUpdates()
+        CATransaction.commit()
+    }
+
+    fileprivate func reloadSections() {
         let range = 0..<self.tableView.numberOfSections
         let sections = IndexSet(range)
         self.tableView.reloadSections(sections as IndexSet, with: .automatic)
+    }
+
+    fileprivate func toggleBookmark(_ on: Bool) {
+        if on {
+            bookmarkButton.image = UIImage(named: "bookmark-dark")
+        } else {
+            bookmarkButton.image = UIImage(named: "bookmark-outline-dark")
+        }
     }
 
     /*

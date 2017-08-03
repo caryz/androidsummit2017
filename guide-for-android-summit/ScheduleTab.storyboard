@@ -62,7 +62,7 @@
                                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="cSR-CQ-ELQ" userLabel="Icon">
                                                                     <rect key="frame" x="0.0" y="0.0" width="40" height="134"/>
                                                                     <subviews>
-                                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5fd-pk-FYL">
+                                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5fd-pk-FYL" userLabel="Bookmark Button" customClass="ToggleButton" customModule="guide_for_android_summit" customModuleProvider="target">
                                                                             <rect key="frame" x="0.0" y="0.0" width="40" height="134"/>
                                                                             <constraints>
                                                                                 <constraint firstAttribute="width" constant="40" id="rJK-fo-zpf"/>
@@ -134,6 +134,7 @@
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="blockView" destination="bKO-ru-hXT" id="tto-5u-DNY"/>
+                                            <outlet property="bookmark" destination="5fd-pk-FYL" id="aj5-k3-W6r"/>
                                             <outlet property="leftBarView" destination="IZO-EQ-6WZ" id="zbn-o4-HHh"/>
                                             <outlet property="speakerLabel" destination="cxe-sR-kyk" id="PL3-u6-o9k"/>
                                             <outlet property="timeLabel" destination="IBs-J6-yvs" id="xKD-bg-6Uq"/>
