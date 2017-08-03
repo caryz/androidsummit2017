@@ -18,6 +18,7 @@ class ScheduleTableViewController: UIViewController, UITableViewDelegate, UITabl
     // MARK: - Instance Variables
     let cellReuseIdentifier = "customEventCell"
     let ref = Database.database().reference(withPath: "schedule")
+    let speakerRef = Database.database().reference(withPath: "speakers")
 
     // first layer = thurs/fri; second layer = time section; third layer = time rows
     var events = [Event]()
@@ -47,9 +48,23 @@ class ScheduleTableViewController: UIViewController, UITableViewDelegate, UITabl
     }
 
     func fetchSchedule() {
+        var speakers = [Person]()
+        speakerRef.queryOrdered(byChild: "name").observe(.value, with: { snapshot in
+            for item in snapshot.children {
+                let speaker = Person(snapshot: item as! DataSnapshot)
+                speakers.append(speaker)
+                //print(speaker.key)
+            }
+        })
+
+
         ref.queryOrdered(byChild: "start").observe(.value, with: { snapshot in
             for item in snapshot.children {
-                let event = Event(snapshot: item as! DataSnapshot)
+                var event = Event(snapshot: item as! DataSnapshot)
+                if let index = speakers.index(where: { $0.key == event.key }) {
+                    event.speakers = [speakers[index].fullName]
+                    print("\(speakers[index].fullName)")
+                }
                 self.events.append(event)
             }
 
@@ -135,7 +150,7 @@ class ScheduleTableViewController: UIViewController, UITableViewDelegate, UITabl
                 }
             }
 
-            deleteAppropriateCells(toDelete)
+            deleteAppropriateCells(toDelete, animation: .fade)
             bookmarkButtonChecked = true
             toggleBookmark(true)
         } else {
@@ -154,7 +169,7 @@ class ScheduleTableViewController: UIViewController, UITableViewDelegate, UITabl
                 timeTable[dayIndex][sec] = allEvents[dayIndex][sec]
             }
 
-            tableView.insertRows(at: toInsert, with: .automatic)
+            tableView.insertRows(at: toInsert, with: .fade)
             bookmarkButtonChecked = false
             toggleBookmark(false)
         }
@@ -177,7 +192,7 @@ class ScheduleTableViewController: UIViewController, UITableViewDelegate, UITabl
         let event = timeTable[dayIndex][indexPath.section][indexPath.row]
         let timeText = "\(event.getStartTime())-\(event.getEndTime())"
         cell.blockView.backgroundColor = UIColor.white
-        cell.configure(title: event.title, time: timeText, speaker: event.speaker,
+        cell.configure(title: event.title, time: timeText, speakers: event.speakers,
                        color: colors.getColor(event.track), checked: event.saved)
 
         return cell
@@ -213,7 +228,8 @@ class ScheduleTableViewController: UIViewController, UITableViewDelegate, UITabl
         }
     }
 
-    fileprivate func deleteAppropriateCells(_ toDelete: [IndexPath]) {
+    fileprivate func deleteAppropriateCells(_ toDelete: [IndexPath],
+                                            animation: UITableViewRowAnimation = .automatic) {
         /* Rationale and Explanation
          * You're probably looking at this goign wtf
          * But this is for the smoothest animation possible during the edge case
@@ -225,18 +241,16 @@ class ScheduleTableViewController: UIViewController, UITableViewDelegate, UITabl
         CATransaction.setCompletionBlock {
             // if empty, an extra section header gets left in there
             if self.tableView.numberOfRows(inSection: 0) == 0 {
-                self.reloadSections()
+                self.reloadSection(0)
             }
         }
-        tableView.deleteRows(at: toDelete, with: .automatic)
+        tableView.deleteRows(at: toDelete, with: animation)
         tableView.endUpdates()
         CATransaction.commit()
     }
 
-    fileprivate func reloadSections() {
-        let range = 0..<self.tableView.numberOfSections
-        let sections = IndexSet(range)
-        self.tableView.reloadSections(sections as IndexSet, with: .automatic)
+    fileprivate func reloadSection(_ section: Int) {
+        self.tableView.reloadSections(IndexSet(section...section) as IndexSet, with: .fade)
     }
 
     fileprivate func toggleBookmark(_ on: Bool) {

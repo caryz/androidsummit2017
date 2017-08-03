@@ -30,11 +30,11 @@ class EventCell: UITableViewCell {
         //layer.masksToBounds = false
     }
 
-    func configure(title: String, time: String, speaker: String,
+    func configure(title: String, time: String, speakers: [String],
                    color: UIColor? = .white, checked: Bool = false) {
         self.titleLabel?.text = title
         self.timeLabel?.text = time
-        self.speakerLabel?.text = speaker
+        self.speakerLabel?.text = speakers[0] // TODO: update
         self.leftBarView?.backgroundColor = color
         self.bookmark.isChecked = checked
     }
