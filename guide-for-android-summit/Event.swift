@@ -80,4 +80,9 @@ struct Event {
         return Calendar.current.dateComponents([.month, .day, .hour, .minute],
                                                from: convertIntervalToDate(self.endTime))
     }
+
+    static func ==(lhs: Event, rhs: Event) -> Bool {
+        // TODO: make this into eventId comparisons later
+        return lhs.title == rhs.title // && lhs.type == rhs.type
+    }
 }
