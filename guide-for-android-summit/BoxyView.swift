@@ -22,46 +22,38 @@ class BoxyView: UIView {
     }
 
     class func instanceFromNib() -> BoxyView {
-        return UINib(nibName: "BoxyView", bundle: nil).instantiate(withOwner: self, options: nil)[0] as! BoxyView
+        return UINib(nibName: "BoxyView", bundle: nil).instantiate(withOwner: self, options: nil).first as! BoxyView
     }
 
-    func configure(_ title: String? = nil, content: String? = nil, color: UIColor? = nil, imageName: String? = nil) {
+    func configure(_ title: String? = nil, content: String? = nil, color: UIColor? = nil,
+                   imageName: String? = nil, contentMode: UIViewContentMode = .scaleAspectFit) {
         if let title = title {
             self.titleLabel.text = title
         } else {
-            self.titleLabel.isHidden = true
+            self.titleLabel.removeFromSuperview()
         }
 
         if let content = content {
             self.contentLabel.text = content
         } else {
-            self.contentLabel.isHidden = true
+            self.contentLabel.removeFromSuperview()
         }
 
         if let bgColor = color {
             self.titleBackgroundView.backgroundColor = bgColor
         } else {
-            self.titleBackgroundView.isHidden = true
+            self.titleBackgroundView.removeFromSuperview()
         }
 
         if let imgName = imageName {
             self.image.image = UIImage(named: imgName)
+            self.image.contentMode = contentMode
         } else {
-            self.image.isHidden = true
+            self.image.removeFromSuperview()
         }
     }
 
     func addCustomViewToStack(_ customView: UIView) {
         contentStack.addArrangedSubview(customView)
-    }
-    
-    fileprivate func addShadows() {
-        self.layer.shadowColor = UIColor.black.withAlphaComponent(0.5).cgColor
-        self.layer.shadowOffset = CGSize(width: 2, height: 2)
-        self.layer.shadowOpacity = 1
-
-        self.titleBackgroundView.layer.shadowColor = UIColor.black.withAlphaComponent(0.3).cgColor
-        self.titleBackgroundView.layer.shadowOffset = CGSize(width: 0, height: 2)
-        self.titleBackgroundView.layer.shadowOpacity = 1
     }
 }

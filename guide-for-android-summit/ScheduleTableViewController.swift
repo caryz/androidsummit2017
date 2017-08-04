@@ -224,6 +224,7 @@ class ScheduleTableViewController: UIViewController, UITableViewDelegate, UITabl
             let viewController = segue.destination as? EventDetailsViewController
             if let indexPath = tableView.indexPathForSelectedRow {
                 viewController?.event = timeTable[dayIndex][indexPath.section][indexPath.row]
+                // add speaker stuff here
             }
         }
     }

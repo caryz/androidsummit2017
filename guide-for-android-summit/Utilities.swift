@@ -72,8 +72,21 @@ func convertIntervalToDate(_ interval: TimeInterval) -> Date {
 
 func convertToAMPM(_ interval: TimeInterval) -> String {
     let formatter = DateFormatter()
+    formatter.locale = Locale(identifier: "en_US_POSIX")
     formatter.dateFormat = "h:mma"
     formatter.amSymbol = "AM"
     formatter.pmSymbol = "PM"
     return formatter.string(from: convertIntervalToDate(interval))
+}
+
+extension UIView {
+    func addShadows() {
+        self.layer.shadowColor = UIColor.black.withAlphaComponent(0.5).cgColor
+        self.layer.shadowOffset = CGSize(width: 2, height: 2)
+        self.layer.shadowOpacity = 1
+
+        //self.titleBackgroundView.layer.shadowColor = UIColor.black.withAlphaComponent(0.3).cgColor
+        //self.titleBackgroundView.layer.shadowOffset = CGSize(width: 0, height: 2)
+        //self.titleBackgroundView.layer.shadowOpacity = 1
+    }
 }

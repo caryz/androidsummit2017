@@ -21,6 +21,8 @@
 		4A7537B41F23990D002559F3 /* guide_for_android_summitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A7537B31F23990D002559F3 /* guide_for_android_summitTests.swift */; };
 		4A7537BF1F23990D002559F3 /* guide_for_android_summitUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A7537BE1F23990D002559F3 /* guide_for_android_summitUITests.swift */; };
 		4A7537CE1F23A014002559F3 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4A7537CD1F23A014002559F3 /* GoogleService-Info.plist */; };
+		4A774F3B1F3435A900792320 /* SpeakerViewMini.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A774F3A1F3435A900792320 /* SpeakerViewMini.swift */; };
+		4A774F3D1F3435B600792320 /* SpeakerViewMini.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4A774F3C1F3435B600792320 /* SpeakerViewMini.xib */; };
 		4A9BCC411F26DCB3007C0964 /* ScheduleTab.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4A9BCC401F26DCB3007C0964 /* ScheduleTab.storyboard */; };
 		4A9BCC441F26DD08007C0964 /* ScheduleTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A9BCC431F26DD08007C0964 /* ScheduleTableViewController.swift */; };
 		4A9BCC4A1F270133007C0964 /* EventCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A9BCC481F270133007C0964 /* EventCell.swift */; };
@@ -75,6 +77,8 @@
 		4A7537BE1F23990D002559F3 /* guide_for_android_summitUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = guide_for_android_summitUITests.swift; sourceTree = "<group>"; };
 		4A7537C01F23990D002559F3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4A7537CD1F23A014002559F3 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		4A774F3A1F3435A900792320 /* SpeakerViewMini.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpeakerViewMini.swift; sourceTree = "<group>"; };
+		4A774F3C1F3435B600792320 /* SpeakerViewMini.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SpeakerViewMini.xib; sourceTree = "<group>"; };
 		4A9BCC401F26DCB3007C0964 /* ScheduleTab.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ScheduleTab.storyboard; sourceTree = "<group>"; };
 		4A9BCC431F26DD08007C0964 /* ScheduleTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScheduleTableViewController.swift; sourceTree = "<group>"; };
 		4A9BCC481F270133007C0964 /* EventCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventCell.swift; sourceTree = "<group>"; };
@@ -203,6 +207,8 @@
 				4A4D28CC1F297B4300B056D6 /* BoxyView.xib */,
 				4A3682761F3009CE00C76B60 /* SpeakerCell.swift */,
 				4A3682781F32C63500C76B60 /* ToggleButton.swift */,
+				4A774F3A1F3435A900792320 /* SpeakerViewMini.swift */,
+				4A774F3C1F3435B600792320 /* SpeakerViewMini.xib */,
 			);
 			name = views;
 			sourceTree = "<group>";
@@ -379,6 +385,7 @@
 				4A9BCC411F26DCB3007C0964 /* ScheduleTab.storyboard in Resources */,
 				4A4D28C91F2970F400B056D6 /* SpeakerTab.storyboard in Resources */,
 				4A7537A41F23990D002559F3 /* Main.storyboard in Resources */,
+				4A774F3D1F3435B600792320 /* SpeakerViewMini.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -550,6 +557,7 @@
 				4A4D28CF1F29D89500B056D6 /* SpeakerDetailViewController.swift in Sources */,
 				4A75379D1F23990D002559F3 /* AppDelegate.swift in Sources */,
 				4AEB11A71F246E9A00639E45 /* Event.swift in Sources */,
+				4A774F3B1F3435A900792320 /* SpeakerViewMini.swift in Sources */,
 				4A9BCC4D1F27019A007C0964 /* Utilities.swift in Sources */,
 				4A9BCC511F27E241007C0964 /* EventDetailsViewController.swift in Sources */,
 				4A4D28CB1F297B3900B056D6 /* BoxyView.swift in Sources */,

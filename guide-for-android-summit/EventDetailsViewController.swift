@@ -34,9 +34,12 @@ class EventDetailsViewController: UIViewController {
         titleLabel.text = event.title
         timeLabel.text = "\(event.getStartTime())-\(event.getEndTime())"
 
-        addBoxyView(title: "Description", content:
-            paragraphFrom(description: event.description), color: trackColor)
-        addBoxyView(title: "Speakers", content: nil, color: trackColor)
+        addBoxyView(title: nil, content:
+            paragraphFrom(description: event.description), color: nil)
+
+        if !event.speakers.isEmpty {
+            addSpeakerView(title: "Speakers", color: trackColor)
+        }
     }
 
     func addBoxyView(title: String?, content: String? = nil, color: UIColor? = nil) {
@@ -45,4 +48,20 @@ class EventDetailsViewController: UIViewController {
         contentStack.addArrangedSubview(box)
     }
 
+    func addSpeakerView(title: String?, color: UIColor? = nil) {
+        guard let speakers = event?.speakers else { return }
+
+        let box = BoxyView.instanceFromNib()
+        box.configure(title, content: nil, color: color)
+
+        for speaker in speakers {
+            let speakerView = SpeakerViewMini.instanceFromNib()
+            speakerView.configure(name: speaker, company: "No Company Info")
+            //        cell.configure(name: speaker.fullName, company: speaker.company)
+            //        cell.speakerImage?.imageFromServerURL(urlString: speaker.avatar)
+            box.addCustomViewToStack(speakerView)
+        }
+
+        contentStack.addArrangedSubview(box)
+    }
 }

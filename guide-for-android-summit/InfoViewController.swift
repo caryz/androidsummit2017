@@ -12,7 +12,9 @@ class InfoViewController: UIViewController, UIScrollViewDelegate {
     // MARK: - Outlets
     @IBOutlet weak var scrollView: UIScrollView! // idk if i'm even using this lul
     @IBOutlet weak var contentStack: UIStackView!
-
+    @IBOutlet weak var easterEggBarItem: UIBarButtonItem!
+    var didTriggerEasterEgg = false
+    var easterEggView: UIView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,11 +23,12 @@ class InfoViewController: UIViewController, UIScrollViewDelegate {
 
     func configureContentBox() {
         let androidSummitBox = BoxyView.instanceFromNib()
-        androidSummitBox.configure("Android Summit", content: "A multi-track event focused on designing, developing, and testing for Android.\n\nAugust 24th & 25th, 2017", color: .red)
+        //androidSummitBox.configure("Android Summit", content: "A multi-track event focused on designing, developing, and testing for Android.\n\nAugust 24th & 25th, 2017", color: .red)
+        androidSummitBox.configure("Android Summit", content: "A multi-track event focused on designing, developing, and testing for Android.\n\nAugust 24th & 25th, 2017", color: nil, imageName: "about_logo", contentMode: .scaleAspectFill)
         contentStack.addArrangedSubview(androidSummitBox)
 
         let sheratonHotel = BoxyView.instanceFromNib()
-        sheratonHotel.configure("Sheraton Tysons Hotel", content: "8661 Leesburg Pike\nTysons, VA, 22182", color: .gray, imageName: "sheraton")
+        sheratonHotel.configure("Sheraton Tysons Hotel", content: "8661 Leesburg Pike\nTysons, VA, 22182", color: nil, imageName: "sheraton", contentMode: .scaleAspectFill)
         contentStack.addArrangedSubview(sheratonHotel)
 
         let sponsorBox = BoxyView.instanceFromNib()
@@ -39,11 +42,20 @@ class InfoViewController: UIViewController, UIScrollViewDelegate {
         let benefitingBox = BoxyView.instanceFromNib()
         benefitingBox.configure("Benefiting", content: "", color: .blue, imageName: "wwc_logo")
         contentStack.addArrangedSubview(benefitingBox)
-
-        for i in 0...3 {
-            let box = BoxyView.instanceFromNib()
-            box.configure("Title \(i)", content: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.", color: .cyan)
-            contentStack.addArrangedSubview(box)
+    }
+    @IBAction func didTapEasterEgg(_ sender: UIBarButtonItem) {
+        if didTriggerEasterEgg {
+            easterEggView.removeFromSuperview()
+            didTriggerEasterEgg = false
+        } else {
+            easterEggView = UIView(frame: CGRect(x: 50, y: 64, width: 200, height: 50))
+            easterEggView.backgroundColor = UIColor.lightGray
+            let label = UILabel(frame: CGRect(x: 0, y: 0, width: 200, height: 50))
+            label.adjustsFontSizeToFitWidth = true
+            label.text = "Stahp. Fk u. Juliana sucks."
+            easterEggView.addSubview(label)
+            view.addSubview(easterEggView)
+            didTriggerEasterEgg = true
         }
     }
 }

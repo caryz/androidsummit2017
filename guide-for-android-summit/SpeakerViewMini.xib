@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="SpeakerViewMini" customModule="guide_for_android_summit" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="80"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="user_placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="YwT-Qz-K6C">
+                    <rect key="frame" x="10" y="10" width="60" height="60"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="60" id="1PN-md-7wU"/>
+                        <constraint firstAttribute="height" constant="60" id="Img-he-AUT"/>
+                    </constraints>
+                </imageView>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="RAU-4X-mY5">
+                    <rect key="frame" x="80" y="5" width="230" height="70"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="cdC-wU-D9d" userLabel="Title">
+                            <rect key="frame" x="0.0" y="0.0" width="230" height="34.5"/>
+                            <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="18"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Detail" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="UmC-GN-PK2" userLabel="Detail">
+                            <rect key="frame" x="0.0" y="39.5" width="230" height="30.5"/>
+                            <fontDescription key="fontDescription" name="Helvetica-Oblique" family="Helvetica" pointSize="14"/>
+                            <color key="textColor" red="0.60790485139999995" green="0.60788136719999997" blue="0.60789728160000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                </stackView>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="YwT-Qz-K6C" secondAttribute="bottom" constant="10" id="36V-vI-jgp"/>
+                <constraint firstItem="YwT-Qz-K6C" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="3EH-wd-buM"/>
+                <constraint firstAttribute="trailing" secondItem="RAU-4X-mY5" secondAttribute="trailing" constant="10" id="Dty-mU-7QI"/>
+                <constraint firstItem="YwT-Qz-K6C" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="10" id="GCM-rI-qMl"/>
+                <constraint firstItem="RAU-4X-mY5" firstAttribute="leading" secondItem="YwT-Qz-K6C" secondAttribute="trailing" constant="10" id="RNf-Pa-pdX"/>
+                <constraint firstAttribute="bottom" secondItem="RAU-4X-mY5" secondAttribute="bottom" constant="5" id="UUl-eZ-JFw"/>
+                <constraint firstItem="YwT-Qz-K6C" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="10" id="hRD-wL-GzG"/>
+                <constraint firstItem="RAU-4X-mY5" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="qvL-pW-iAX"/>
+                <constraint firstItem="RAU-4X-mY5" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="5" id="zXU-zg-jqq"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="speakerCompany" destination="UmC-GN-PK2" id="2yD-6j-DFH"/>
+                <outlet property="speakerImage" destination="YwT-Qz-K6C" id="NsE-9j-UYT"/>
+                <outlet property="speakerName" destination="cdC-wU-D9d" id="48N-wr-UcY"/>
+            </connections>
+            <point key="canvasLocation" x="0.0" y="306"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="user_placeholder" width="256" height="256"/>
+    </resources>
+</document>
