@@ -8,7 +8,6 @@
 
 import UIKit
 
-
 class ToggleButton: UIButton {
     var checkedImage: UIImage?
     var offImage: UIImage?
@@ -17,8 +16,10 @@ class ToggleButton: UIButton {
         didSet {
             if isChecked {
                 self.setImage(checkedImage, for: .normal)
+                self.tintColor = UIColor(red: 220/255, green: 82/255, blue: 65/255, alpha: 1)
             } else {
                 self.setImage(offImage, for: .normal)
+                self.tintColor = .lightGray
             }
             isChecked = !isChecked
         }
