@@ -14,7 +14,6 @@
 		4A4D28CD1F297B4300B056D6 /* BoxyView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4A4D28CC1F297B4300B056D6 /* BoxyView.xib */; };
 		4A4D28CF1F29D89500B056D6 /* SpeakerDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A4D28CE1F29D89500B056D6 /* SpeakerDetailViewController.swift */; };
 		4A75379D1F23990D002559F3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A75379C1F23990D002559F3 /* AppDelegate.swift */; };
-		4A75379F1F23990D002559F3 /* ScheduleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A75379E1F23990D002559F3 /* ScheduleViewController.swift */; };
 		4A7537A11F23990D002559F3 /* SpeakersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A7537A01F23990D002559F3 /* SpeakersViewController.swift */; };
 		4A7537A41F23990D002559F3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4A7537A21F23990D002559F3 /* Main.storyboard */; };
 		4A7537A61F23990D002559F3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4A7537A51F23990D002559F3 /* Assets.xcassets */; };
@@ -64,7 +63,6 @@
 		4A4D28CE1F29D89500B056D6 /* SpeakerDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpeakerDetailViewController.swift; sourceTree = "<group>"; };
 		4A7537991F23990D002559F3 /* guide-for-android-summit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "guide-for-android-summit.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4A75379C1F23990D002559F3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		4A75379E1F23990D002559F3 /* ScheduleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleViewController.swift; sourceTree = "<group>"; };
 		4A7537A01F23990D002559F3 /* SpeakersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeakersViewController.swift; sourceTree = "<group>"; };
 		4A7537A31F23990D002559F3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		4A7537A51F23990D002559F3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = ../Assets.xcassets; sourceTree = "<group>"; };
@@ -212,7 +210,6 @@
 		4AEB11A01F24671300639E45 /* controllers */ = {
 			isa = PBXGroup;
 			children = (
-				4A75379E1F23990D002559F3 /* ScheduleViewController.swift */,
 				4AEB119E1F24670F00639E45 /* LoginViewController.swift */,
 				4A9BCC431F26DD08007C0964 /* ScheduleTableViewController.swift */,
 				4A7537A01F23990D002559F3 /* SpeakersViewController.swift */,
@@ -552,7 +549,6 @@
 				4A7537A11F23990D002559F3 /* SpeakersViewController.swift in Sources */,
 				4A4D28CF1F29D89500B056D6 /* SpeakerDetailViewController.swift in Sources */,
 				4A75379D1F23990D002559F3 /* AppDelegate.swift in Sources */,
-				4A75379F1F23990D002559F3 /* ScheduleViewController.swift in Sources */,
 				4AEB11A71F246E9A00639E45 /* Event.swift in Sources */,
 				4A9BCC4D1F27019A007C0964 /* Utilities.swift in Sources */,
 				4A9BCC511F27E241007C0964 /* EventDetailsViewController.swift in Sources */,

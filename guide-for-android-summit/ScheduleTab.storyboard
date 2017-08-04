@@ -19,11 +19,11 @@
                         <viewControllerLayoutGuide type="bottom" id="HGW-I1-12y"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="kh1-nn-2eC">
-                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="wg8-Dd-4SN" userLabel="Day Segment">
-                                <rect key="frame" x="16" y="2" width="343" height="32"/>
+                                <rect key="frame" x="16" y="66" width="343" height="32"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="31" id="NNU-k2-CPN"/>
                                 </constraints>
@@ -37,7 +37,7 @@
                                 </connections>
                             </segmentedControl>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="OQM-kh-Tsa">
-                                <rect key="frame" x="0.0" y="35" width="375" height="568"/>
+                                <rect key="frame" x="0.0" y="99" width="375" height="568"/>
                                 <color key="backgroundColor" red="0.93335485460000001" green="0.93331974740000001" blue="0.93334352970000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <color key="tintColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="separatorColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -147,7 +147,7 @@
                                 </connections>
                             </tableView>
                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="E8X-0p-eU0">
-                                <rect key="frame" x="169" y="283" width="37" height="37"/>
+                                <rect key="frame" x="169" y="315" width="37" height="37"/>
                                 <color key="color" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             </activityIndicatorView>
                         </subviews>
@@ -191,11 +191,11 @@
                         <viewControllerLayoutGuide type="bottom" id="VxU-mq-ZcW"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="eJ6-aU-m2E">
-                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Wry-I3-aIh">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Bf5-t2-bTm" userLabel="Header Background View">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="55.5"/>
@@ -275,9 +275,10 @@
                 <navigationController storyboardIdentifier="scheduleTableNav" title="Schedule" id="45x-xE-eAi" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Schedule" image="calendar-dark" id="rCS-0x-Tbg"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="rnG-WR-LeA">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="rnG-WR-LeA">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <textAttributes key="titleTextAttributes">
                             <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="20"/>
                             <color key="textColor" red="1" green="0.0" blue="0.29159596459999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
