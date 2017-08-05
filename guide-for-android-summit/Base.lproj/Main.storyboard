@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -89,56 +90,64 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="9bv-VX-ZNp">
-                                <rect key="frame" x="0.0" y="82" width="375" height="503"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="blurryBG" translatesAutoresizingMaskIntoConstraints="NO" id="jGZ-ge-qrd">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="AndroidSummit_Logo_White" translatesAutoresizingMaskIntoConstraints="NO" id="sj9-o4-VEZ">
+                                <rect key="frame" x="50" y="133.5" width="275" height="200"/>
+                            </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="9bv-VX-ZNp">
+                                <rect key="frame" x="50" y="383.5" width="275" height="100"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="AndroidSummit_Logo" translatesAutoresizingMaskIntoConstraints="NO" id="sj9-o4-VEZ">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="413"/>
-                                    </imageView>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cta-eH-ydl">
-                                        <rect key="frame" x="15" y="423" width="345" height="35"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cta-eH-ydl" customClass="LeftAlignedIconButton" customModule="guide_for_android_summit" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="275" height="40"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="20"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="szG-ui-m3f"/>
+                                        </constraints>
+                                        <inset key="imageEdgeInsets" minX="20" minY="0.0" maxX="20" maxY="0.0"/>
                                         <size key="titleShadowOffset" width="1" height="2"/>
-                                        <state key="normal" title="Login">
+                                        <state key="normal" title="Sign with Google" image="Google_Logo">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                            <color key="titleShadowColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
                                             <action selector="loginButton:" destination="um9-A0-VBD" eventType="touchUpInside" id="NHe-uU-FgJ"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iDd-aF-jWX">
-                                        <rect key="frame" x="15" y="468" width="345" height="35"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="20"/>
+                                        <rect key="frame" x="0.0" y="60" width="275" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="tQp-rz-md5"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="16"/>
                                         <size key="titleShadowOffset" width="1" height="2"/>
-                                        <state key="normal" title="Guest">
-                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                            <color key="titleShadowColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
+                                        <state key="normal" title="Continue as Guest"/>
                                         <connections>
                                             <action selector="loginButton:" destination="um9-A0-VBD" eventType="touchUpInside" id="PMy-1b-jcg"/>
                                         </connections>
                                     </button>
                                 </subviews>
-                                <constraints>
-                                    <constraint firstItem="Cta-eH-ydl" firstAttribute="leading" secondItem="9bv-VX-ZNp" secondAttribute="leading" constant="15" id="JUy-Uz-ZPf"/>
-                                    <constraint firstAttribute="trailing" secondItem="Cta-eH-ydl" secondAttribute="trailing" constant="15" id="SJz-AM-OQN"/>
-                                    <constraint firstAttribute="trailing" secondItem="iDd-aF-jWX" secondAttribute="trailing" constant="15" id="WZM-Y3-FuX"/>
-                                    <constraint firstItem="iDd-aF-jWX" firstAttribute="leading" secondItem="9bv-VX-ZNp" secondAttribute="leading" constant="15" id="mPp-Yw-xaT"/>
-                                </constraints>
                             </stackView>
                         </subviews>
-                        <color key="backgroundColor" red="0.96979349851608276" green="0.35982894897460938" blue="0.2910664975643158" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" white="0.80154079860000005" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
+                            <constraint firstItem="sj9-o4-VEZ" firstAttribute="centerX" secondItem="hFy-jx-8kQ" secondAttribute="centerX" id="E0c-Dk-l8S"/>
+                            <constraint firstItem="sj9-o4-VEZ" firstAttribute="bottom" secondItem="hFy-jx-8kQ" secondAttribute="centerY" id="IAx-AE-3PO"/>
+                            <constraint firstItem="jGZ-ge-qrd" firstAttribute="height" secondItem="hFy-jx-8kQ" secondAttribute="height" id="McT-bB-mBP"/>
+                            <constraint firstItem="jGZ-ge-qrd" firstAttribute="centerY" secondItem="hFy-jx-8kQ" secondAttribute="centerY" id="TDZ-qG-rQZ"/>
                             <constraint firstItem="9bv-VX-ZNp" firstAttribute="centerX" secondItem="hFy-jx-8kQ" secondAttribute="centerX" id="WV3-g9-jlb"/>
-                            <constraint firstItem="9bv-VX-ZNp" firstAttribute="width" secondItem="hFy-jx-8kQ" secondAttribute="width" id="ZFH-Sr-4v2"/>
-                            <constraint firstItem="9bv-VX-ZNp" firstAttribute="centerY" secondItem="hFy-jx-8kQ" secondAttribute="centerY" id="cSa-QM-vZW"/>
+                            <constraint firstItem="9bv-VX-ZNp" firstAttribute="width" secondItem="hFy-jx-8kQ" secondAttribute="width" constant="-100" id="ZFH-Sr-4v2"/>
+                            <constraint firstItem="sj9-o4-VEZ" firstAttribute="width" secondItem="9bv-VX-ZNp" secondAttribute="width" id="bHq-R5-BSc"/>
+                            <constraint firstItem="jGZ-ge-qrd" firstAttribute="width" secondItem="hFy-jx-8kQ" secondAttribute="width" id="dmn-tp-ILK"/>
+                            <constraint firstItem="9bv-VX-ZNp" firstAttribute="top" secondItem="sj9-o4-VEZ" secondAttribute="bottom" constant="50" id="ldn-EA-Y8a"/>
+                            <constraint firstItem="jGZ-ge-qrd" firstAttribute="centerX" secondItem="hFy-jx-8kQ" secondAttribute="centerX" id="pxs-nH-RGE"/>
                         </constraints>
                     </view>
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
                     <connections>
+                        <outlet property="GoogleLoginButton" destination="Cta-eH-ydl" id="1t6-RC-bGL"/>
+                        <outlet property="GuestLoginButton" destination="iDd-aF-jWX" id="6Rz-uT-cHl"/>
                         <segue destination="49e-Tb-3d3" kind="presentation" identifier="TabBarSegue" id="5Gq-rS-FEA"/>
                     </connections>
                 </viewController>
@@ -210,7 +219,9 @@
         </scene>
     </scenes>
     <resources>
-        <image name="AndroidSummit_Logo" width="549" height="413"/>
+        <image name="AndroidSummit_Logo_White" width="229" height="200"/>
+        <image name="Google_Logo" width="18" height="18"/>
+        <image name="blurryBG" width="375" height="667"/>
         <image name="calendar-dark" width="24" height="24"/>
         <image name="information-outline-dark" width="24" height="24"/>
     </resources>

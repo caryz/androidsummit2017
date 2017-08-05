@@ -63,6 +63,10 @@ class ScheduleTableViewController: UIViewController, UITableViewDelegate, UITabl
                 var event = Event(snapshot: item as! DataSnapshot)
                 if let index = speakers.index(where: { $0.key == event.key }) {
                     event.speakers = [speakers[index].fullName]
+                    // TODO: make data the following:
+//                    for s: Int in event.speakers {
+//                        event.speakerList.append(speakers[s])
+//                    }
                     print("\(speakers[index].fullName)")
                 }
                 self.events.append(event)

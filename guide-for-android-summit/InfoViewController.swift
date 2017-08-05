@@ -28,7 +28,7 @@ class InfoViewController: UIViewController, UIScrollViewDelegate {
         contentStack.addArrangedSubview(androidSummitBox)
 
         let sheratonHotel = BoxyView.instanceFromNib()
-        sheratonHotel.configure("Sheraton Tysons Hotel", content: "8661 Leesburg Pike\nTysons, VA, 22182", color: nil, imageName: "sheraton", contentMode: .scaleAspectFill)
+        sheratonHotel.configure("Sheraton Tysons Hotel", content: "\n8661 Leesburg Pike\nTysons, VA, 22182", color: nil, imageName: "sheraton", contentMode: .scaleAspectFill)
         contentStack.addArrangedSubview(sheratonHotel)
 
         let sponsorBox = BoxyView.instanceFromNib()

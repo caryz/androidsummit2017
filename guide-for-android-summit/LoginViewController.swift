@@ -10,10 +10,48 @@ import UIKit
 
 class LoginViewController: UIViewController {
 
+    @IBOutlet weak var GoogleLoginButton: UIButton!
+    @IBOutlet weak var GuestLoginButton: UIButton!
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        configureButtons()
+    }
+
+    fileprivate func configureButtons() {
+        GoogleLoginButton.setBorders(1)
+        GoogleLoginButton.roundCornersWith(3)
+
+        GuestLoginButton.setBorders(1)
+        GuestLoginButton.roundCornersWith(3)
+    }
+
     @IBAction func loginButton(_ sender: UIButton) {
         performSegue(withIdentifier: SegueId.tabBarSegue.rawValue, sender: nil)
     }
     
+}
+
+@IBDesignable
+class LeftAlignedIconButton: UIButton {
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        contentHorizontalAlignment = .left
+        let availableSpace = UIEdgeInsetsInsetRect(bounds, contentEdgeInsets)
+        let availableWidth = availableSpace.width - imageEdgeInsets.right - (imageView?.frame.width ?? 0) - (titleLabel?.frame.width ?? 0)
+        titleEdgeInsets = UIEdgeInsets(top: 0, left: availableWidth / 2, bottom: 0, right: 0)
+    }
+}
+
+extension UIButton {
+    func setBorders(_ pointValue: CGFloat, with color: UIColor = .white) {
+        self.layer.borderWidth = pointValue
+        self.layer.borderColor = color.cgColor
+    }
+
+    func roundCornersWith(_ pointValue: CGFloat) {
+        self.layer.cornerRadius = pointValue
+    }
 }
 
 extension UIApplication {
