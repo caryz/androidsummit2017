@@ -123,6 +123,7 @@
                                         <size key="titleShadowOffset" width="1" height="2"/>
                                         <state key="normal" title="Continue as Guest"/>
                                         <connections>
+                                            <action selector="guestButtonTapped:" destination="um9-A0-VBD" eventType="touchUpInside" id="Fx3-MH-OTV"/>
                                             <action selector="loginButton:" destination="um9-A0-VBD" eventType="touchUpInside" id="PMy-1b-jcg"/>
                                         </connections>
                                     </button>
@@ -155,10 +156,10 @@
             </objects>
             <point key="canvasLocation" x="-735.20000000000005" y="-0.44977511244377816"/>
         </scene>
-        <!--Tab Bar Controller-->
+        <!--Animated Tab Bar Controller-->
         <scene sceneID="yl2-sM-qoP">
             <objects>
-                <tabBarController modalTransitionStyle="flipHorizontal" id="49e-Tb-3d3" sceneMemberID="viewController">
+                <tabBarController modalTransitionStyle="flipHorizontal" id="49e-Tb-3d3" customClass="AnimatedTabBarController" customModule="guide_for_android_summit" customModuleProvider="target" sceneMemberID="viewController">
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics" translucent="NO"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" translucent="NO" id="W28-zg-YXA">
                         <rect key="frame" x="0.0" y="975" width="768" height="49"/>

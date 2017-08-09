@@ -23,6 +23,8 @@
 		4A7537CE1F23A014002559F3 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4A7537CD1F23A014002559F3 /* GoogleService-Info.plist */; };
 		4A774F3B1F3435A900792320 /* SpeakerViewMini.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A774F3A1F3435A900792320 /* SpeakerViewMini.swift */; };
 		4A774F3D1F3435B600792320 /* SpeakerViewMini.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4A774F3C1F3435B600792320 /* SpeakerViewMini.xib */; };
+		4A774F3F1F3561E100792320 /* SessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A774F3E1F3561E100792320 /* SessionManager.swift */; };
+		4A774F411F3A8F6200792320 /* AnimatedTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A774F401F3A8F6200792320 /* AnimatedTabBarController.swift */; };
 		4A9BCC411F26DCB3007C0964 /* ScheduleTab.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4A9BCC401F26DCB3007C0964 /* ScheduleTab.storyboard */; };
 		4A9BCC441F26DD08007C0964 /* ScheduleTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A9BCC431F26DD08007C0964 /* ScheduleTableViewController.swift */; };
 		4A9BCC4A1F270133007C0964 /* EventCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A9BCC481F270133007C0964 /* EventCell.swift */; };
@@ -79,6 +81,8 @@
 		4A7537CD1F23A014002559F3 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		4A774F3A1F3435A900792320 /* SpeakerViewMini.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpeakerViewMini.swift; sourceTree = "<group>"; };
 		4A774F3C1F3435B600792320 /* SpeakerViewMini.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SpeakerViewMini.xib; sourceTree = "<group>"; };
+		4A774F3E1F3561E100792320 /* SessionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SessionManager.swift; sourceTree = "<group>"; };
+		4A774F401F3A8F6200792320 /* AnimatedTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimatedTabBarController.swift; sourceTree = "<group>"; };
 		4A9BCC401F26DCB3007C0964 /* ScheduleTab.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ScheduleTab.storyboard; sourceTree = "<group>"; };
 		4A9BCC431F26DD08007C0964 /* ScheduleTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScheduleTableViewController.swift; sourceTree = "<group>"; };
 		4A9BCC481F270133007C0964 /* EventCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventCell.swift; sourceTree = "<group>"; };
@@ -222,6 +226,7 @@
 				4AEB11A11F246DA400639E45 /* InfoViewController.swift */,
 				4A9BCC501F27E241007C0964 /* EventDetailsViewController.swift */,
 				4A4D28CE1F29D89500B056D6 /* SpeakerDetailViewController.swift */,
+				4A774F401F3A8F6200792320 /* AnimatedTabBarController.swift */,
 			);
 			name = controllers;
 			sourceTree = "<group>";
@@ -232,6 +237,7 @@
 				4AEB11A41F246E9000639E45 /* Person.swift */,
 				4AEB11A61F246E9A00639E45 /* Event.swift */,
 				4A9BCC4C1F27019A007C0964 /* Utilities.swift */,
+				4A774F3E1F3561E100792320 /* SessionManager.swift */,
 			);
 			name = models;
 			sourceTree = "<group>";
@@ -556,12 +562,14 @@
 				4A7537A11F23990D002559F3 /* SpeakersViewController.swift in Sources */,
 				4A4D28CF1F29D89500B056D6 /* SpeakerDetailViewController.swift in Sources */,
 				4A75379D1F23990D002559F3 /* AppDelegate.swift in Sources */,
+				4A774F411F3A8F6200792320 /* AnimatedTabBarController.swift in Sources */,
 				4AEB11A71F246E9A00639E45 /* Event.swift in Sources */,
 				4A774F3B1F3435A900792320 /* SpeakerViewMini.swift in Sources */,
 				4A9BCC4D1F27019A007C0964 /* Utilities.swift in Sources */,
 				4A9BCC511F27E241007C0964 /* EventDetailsViewController.swift in Sources */,
 				4A4D28CB1F297B3900B056D6 /* BoxyView.swift in Sources */,
 				4AEB11A21F246DA400639E45 /* InfoViewController.swift in Sources */,
+				4A774F3F1F3561E100792320 /* SessionManager.swift in Sources */,
 				4A3682771F3009CE00C76B60 /* SpeakerCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

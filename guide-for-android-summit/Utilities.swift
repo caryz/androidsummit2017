@@ -81,8 +81,8 @@ func convertToAMPM(_ interval: TimeInterval) -> String {
 
 extension UIView {
     func addShadows() {
-        self.layer.shadowColor = UIColor.black.withAlphaComponent(0.5).cgColor
-        self.layer.shadowOffset = CGSize(width: 2, height: 2)
+        self.layer.shadowColor = UIColor.black.withAlphaComponent(0.2).cgColor
+        self.layer.shadowOffset = CGSize(width: 1, height: 1)
         self.layer.shadowOpacity = 1
 
         //self.titleBackgroundView.layer.shadowColor = UIColor.black.withAlphaComponent(0.3).cgColor
@@ -90,3 +90,4 @@ extension UIView {
         //self.titleBackgroundView.layer.shadowOpacity = 1
     }
 }
+
