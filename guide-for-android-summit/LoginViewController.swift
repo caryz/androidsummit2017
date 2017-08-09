@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 class LoginViewController: UIViewController {
 
@@ -30,6 +31,18 @@ class LoginViewController: UIViewController {
         performSegue(withIdentifier: SegueId.tabBarSegue.rawValue, sender: nil)
     }
     
+    @IBAction func guestButtonTapped(_ sender: UIButton) {
+        Auth.auth().signInAnonymously() { (user, error) in
+            if let usr = user {
+                print("User [\(usr.uid)] has logged in")
+                SessionManager.sharedInstance.uid = usr.uid
+                self.performSegue(withIdentifier: SegueId.tabBarSegue.rawValue, sender: nil)
+            }
+            if let err = error {
+                print("Error: \(error)")
+            }
+        }
+    }
 }
 
 @IBDesignable

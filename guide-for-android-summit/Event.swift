@@ -36,11 +36,11 @@ struct Event {
     var speakerList: [Person]
 
     // firebase properties
-    let key: String
+    let key: Int
     let ref: DatabaseReference?
 
     init(title: String, description: [String], startTime: TimeInterval, endTime: TimeInterval,
-         track: EventTrack, speakers: [String], key: String, saved: Bool = false) {
+         track: EventTrack, speakers: [String], key: Int, saved: Bool = false) {
         self.title = title
         self.description = description
         self.startTime = startTime
@@ -61,10 +61,10 @@ struct Event {
         startTime = snapshotValue[e.startTime] as? TimeInterval ?? 0
         endTime = snapshotValue[e.endTime] as? TimeInterval ?? 0
         track = EventTrack(rawValue: snapshotValue[e.track] as? Int ?? -1)!
-        speakers = snapshotValue[e.speaker] as? [String] ?? ["Empty Speaker"]
+        speakers = snapshotValue[e.speaker] as? [String] ?? [String]()
         speakerList = [Person]()
         saved = false // TODO: Firebase
-        key = snapshot.key
+        key = Int(snapshot.key) ?? -1
         ref = snapshot.ref
     }
 

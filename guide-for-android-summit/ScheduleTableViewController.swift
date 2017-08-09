@@ -14,6 +14,7 @@ class ScheduleTableViewController: UIViewController, UITableViewDelegate, UITabl
     @IBOutlet weak var loadingSpinner: UIActivityIndicatorView!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var bookmarkButton: UIBarButtonItem!
+    var refreshControl: UIRefreshControl!
     
     // MARK: - Instance Variables
     let cellReuseIdentifier = "customEventCell"
@@ -33,46 +34,56 @@ class ScheduleTableViewController: UIViewController, UITableViewDelegate, UITabl
     override func viewDidLoad() {
         super.viewDidLoad()
         configureTableView()
-        fetchSchedule()
+        fetchData()
     }
 
     func configureTableView() {
-        tableView.estimatedRowHeight = 100
-        tableView.rowHeight = UITableViewAutomaticDimension
         loadingSpinner.startAnimating()
 
+        // self sizing cells
+        tableView.estimatedRowHeight = 100
+        tableView.rowHeight = UITableViewAutomaticDimension
+
+        // populate initial data
         timeTable.append([[Event]]())
         timeTable.append([[Event]]())
         allEvents.append([[Event]]())
         allEvents.append([[Event]]())
+
+        // refresh control
+        refreshControl = UIRefreshControl()
+        refreshControl.attributedTitle = NSAttributedString(string: "Pull down to refresh")
+        refreshControl.tintColor = .red
+        refreshControl.addTarget(self, action: #selector(self.refresh), for: UIControlEvents.valueChanged)
+        tableView.addSubview(refreshControl)
     }
 
-    func fetchSchedule() {
+    func fetchData() {
+        ref.queryOrdered(byChild: "start").observe(.value, with: { snapshot in
+            for item in snapshot.children {
+                let event = Event(snapshot: item as! DataSnapshot)
+                self.events.append(event)
+            }
+            SessionManager.sharedInstance.fetchedEvents = self.events
+
+            self.fetchSpeakers()
+        })
+    }
+
+    func fetchSpeakers() {
         var speakers = [Person]()
         speakerRef.queryOrdered(byChild: "name").observe(.value, with: { snapshot in
             for item in snapshot.children {
                 let speaker = Person(snapshot: item as! DataSnapshot)
                 speakers.append(speaker)
-                //print(speaker.key)
-            }
-        })
-
-
-        ref.queryOrdered(byChild: "start").observe(.value, with: { snapshot in
-            for item in snapshot.children {
-                var event = Event(snapshot: item as! DataSnapshot)
-                if let index = speakers.index(where: { $0.key == event.key }) {
-                    event.speakers = [speakers[index].fullName]
-                    // TODO: make data the following:
-//                    for s: Int in event.speakers {
-//                        event.speakerList.append(speakers[s])
-//                    }
-                    print("\(speakers[index].fullName)")
+                if let index = self.events.index(where: { $0.key == speaker.eventId }) {
+                    self.events[index].speakers.append(speaker.fullName)
+                    self.events[index].speakerList.append(speaker)
+                    print("Event key[\(self.events[index].key)] associated with Speaker[\(speaker.eventId)]")
                 }
-                self.events.append(event)
             }
+            SessionManager.sharedInstance.fetchedSpeakers = speakers
 
-            //sleep(1)
             self.populateTimeTable()
             self.didFinishFetching = true
             self.loadingSpinner.stopAnimating()
@@ -182,7 +193,13 @@ class ScheduleTableViewController: UIViewController, UITableViewDelegate, UITabl
     // MARK: - Table view data source
 
     func numberOfSections(in tableView: UITableView) -> Int {
-        return didFinishFetching ? timeTable[dayIndex].count : 0
+        guard didFinishFetching else { return 0 }
+        if tableEventCount() == 0 {
+            tableView.backgroundView  = noDataView()
+        } else {
+            tableView.backgroundView = nil
+        }
+        return timeTable[dayIndex].count
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -266,50 +283,28 @@ class ScheduleTableViewController: UIViewController, UITableViewDelegate, UITabl
         }
     }
 
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
+    fileprivate func tableEventCount() -> Int {
+        var sum = 0
+        for event in timeTable[dayIndex] {
+            sum = sum + event.count
+        }
+        print("Sum = \(sum)")
+        return sum
     }
-    */
 
-    /*
-    // Override to support editing the table view.
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            // Delete the row from the data source
-            tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
+    fileprivate func noDataView() -> UILabel {
+        let noDataLabel: UILabel = UILabel(frame: CGRect(x: 0, y: 0, width: tableView.bounds.size.width, height: tableView.bounds.size.height))
+        noDataLabel.text          = "Bookmark some events!"
+        noDataLabel.textColor     = UIColor.darkGray
+        noDataLabel.textAlignment = .center
+        return noDataLabel
     }
-    */
 
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-
+    func refresh(sender: AnyObject) {
+        print("refreshing data")
+        sleep(1)
+        refreshControl.endRefreshing()
     }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
 

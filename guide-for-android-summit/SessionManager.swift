@@ -20,4 +20,8 @@ class SessionManager {
     // list of bookmarked items, index is eventId
     var bookmarkedEvents: [Bool] = [Bool]()
 
+    var fetchedEvents: [Event] = [Event]()
+
+    var fetchedSpeakers: [Person] = [Person]()
+
 }

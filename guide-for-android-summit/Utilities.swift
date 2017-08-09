@@ -39,7 +39,7 @@ struct PersonFields {
     let company = "company"
     let description = "description"
     let avatar = "avatar"
-    let eventId = "eventId"
+    let eventId = "eventID"
 }
 
 struct TrackColors {

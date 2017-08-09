@@ -19,22 +19,19 @@ class SpeakersViewController: UIViewController, UITableViewDataSource, UITableVi
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        tableView.rowHeight = 80
-        self.automaticallyAdjustsScrollViewInsets = false
-        addPeople()
+        configureTableView()
+        fetchSpeakers()
     }
 
-    func addPeople() {
-        ref.queryOrdered(byChild: "name").observe(.value, with: { snapshot in
-            for item in snapshot.children {
-                let speaker = Person(snapshot: item as! DataSnapshot)
-                self.speakers.append(speaker)
-                //print(speaker.key)
-            }
+    func configureTableView() {
+        tableView.rowHeight = 80
+        self.automaticallyAdjustsScrollViewInsets = false
+    }
 
-            self.tableView.reloadData()
-        })
+    func fetchSpeakers() {
+        // already fetched on schedule, retrieve from singleton
+        speakers = SessionManager.sharedInstance.fetchedSpeakers
+        tableView.reloadData()
     }
 
     // MARK: - Table view data source
@@ -53,10 +50,6 @@ class SpeakersViewController: UIViewController, UITableViewDataSource, UITableVi
         let speaker = speakers[indexPath.row]
         cell.configure(name: speaker.fullName, company: speaker.company)
         cell.speakerImage?.imageFromServerURL(urlString: speaker.avatar)
-//        cell.textLabel?.text = speaker.fullName
-//        cell.detailTextLabel?.text = speaker.company
-//        cell.imageView?.image = UIImage(named: "user_placeholder")
-//        cell.imageView?.imageFromServerURL(urlString: speaker.avatar)
         print(speaker.avatar)
 
         return cell

@@ -79,7 +79,7 @@
                                                                                     <color key="textColor" red="0.60790485143661499" green="0.60788136720657349" blue="0.60789728164672852" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                                                     <nil key="highlightedColor"/>
                                                                                 </label>
-                                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Speaker" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="cxe-sR-kyk">
+                                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Speaker" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="cxe-sR-kyk">
                                                                                     <rect key="frame" x="143" y="0.0" width="143" height="16.5"/>
                                                                                     <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="14"/>
                                                                                     <color key="textColor" red="0.60790485143661499" green="0.60788136720657349" blue="0.60789728164672852" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -180,7 +180,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tIM-ug-Qtf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1372" y="189"/>
+            <point key="canvasLocation" x="1372" y="188.45577211394306"/>
         </scene>
         <!--Event Detail-->
         <scene sceneID="xlW-Ui-90y">

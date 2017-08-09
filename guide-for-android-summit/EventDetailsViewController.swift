@@ -49,16 +49,15 @@ class EventDetailsViewController: UIViewController {
     }
 
     func addSpeakerView(title: String?, color: UIColor? = nil) {
-        guard let speakers = event?.speakers else { return }
+        guard let speakers = event?.speakerList else { return }
 
         let box = BoxyView.instanceFromNib()
         box.configure(title, content: nil, color: color)
 
         for speaker in speakers {
             let speakerView = SpeakerViewMini.instanceFromNib()
-            speakerView.configure(name: speaker, company: "No Company Info")
-            //        cell.configure(name: speaker.fullName, company: speaker.company)
-            //        cell.speakerImage?.imageFromServerURL(urlString: speaker.avatar)
+            speakerView.configure(name: speaker.fullName, company: speaker.company)
+            speakerView.speakerImage?.imageFromServerURL(urlString: speaker.avatar)
             box.addCustomViewToStack(speakerView)
         }
 

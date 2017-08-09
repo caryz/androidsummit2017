@@ -26,17 +26,17 @@ class EventCell: UITableViewCell {
         blockView.layer.shadowColor = UIColor.black.withAlphaComponent(0.2).cgColor
         blockView.layer.shadowOffset = CGSize(width: 1, height: 1)
         blockView.layer.shadowOpacity = 1
-        //layer.shadowRadius = 0
-        //layer.masksToBounds = false
     }
 
     func configure(title: String, time: String, speakers: [String],
                    color: UIColor? = .white, checked: Bool = false) {
         self.titleLabel?.text = title
         self.timeLabel?.text = time
-        self.speakerLabel?.text = speakers[0] // TODO: update
         self.leftBarView?.backgroundColor = color
         self.bookmark.isChecked = checked
+
+        // build speaker string
+        self.speakerLabel?.text = speakers.joined(separator: ", ")
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
