@@ -84,5 +84,20 @@ extension UIView {
         //self.titleBackgroundView.layer.shadowOffset = CGSize(width: 0, height: 2)
         //self.titleBackgroundView.layer.shadowOpacity = 1
     }
-}
 
+    func roundEdges(with radius: CGFloat) {
+        self.layer.cornerRadius = radius
+        self.layer.masksToBounds = true
+        self.clipsToBounds = true
+    }
+
+    func setRounded() {
+        // circular view!
+        let radius = (self.bounds.size.width) / 2
+        self.layer.cornerRadius = radius
+        self.layer.masksToBounds = true
+        self.clipsToBounds = true
+        self.layer.borderWidth = 1
+        self.layer.borderColor = UIColor.gray.cgColor
+    }
+}

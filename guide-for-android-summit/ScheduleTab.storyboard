@@ -198,10 +198,10 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Bf5-t2-bTm" userLabel="Header Background View">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="75"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="104"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="8Rn-Uf-suI" userLabel="Header Stack">
-                                                <rect key="frame" x="15" y="15" width="345" height="55"/>
+                                                <rect key="frame" x="15" y="15" width="345" height="84"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Really Long and D4nk Title" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PlP-9M-sCQ">
                                                         <rect key="frame" x="0.0" y="0.0" width="345" height="29"/>
@@ -210,12 +210,45 @@
                                                         <nil key="highlightedColor"/>
                                                         <size key="shadowOffset" width="1" height="1"/>
                                                     </label>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="12:00PM-2:00PM" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uhb-05-rLH">
-                                                        <rect key="frame" x="0.0" y="34" width="345" height="21"/>
-                                                        <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="18"/>
-                                                        <color key="textColor" red="0.60784313729999995" green="0.60784313729999995" blue="0.60784313729999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="ItB-Gl-BmQ">
+                                                        <rect key="frame" x="0.0" y="34" width="345" height="50"/>
+                                                        <subviews>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="12:00PM-2:00PM" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uhb-05-rLH">
+                                                                <rect key="frame" x="0.0" y="0.0" width="172.5" height="50"/>
+                                                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="18"/>
+                                                                <color key="textColor" red="0.60784313729999995" green="0.60784313729999995" blue="0.60784313729999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YLe-fI-PRl" userLabel="Stack View Wrapper">
+                                                                <rect key="frame" x="172.5" y="0.0" width="172.5" height="50"/>
+                                                                <subviews>
+                                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HqC-2X-VR7" userLabel="Label Background">
+                                                                        <rect key="frame" x="118" y="12.5" width="54.5" height="25"/>
+                                                                        <subviews>
+                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Track" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cfk-Pj-UHi" userLabel="Track Label" customClass="TrackLabel" customModule="guide_for_android_summit" customModuleProvider="target">
+                                                                                <rect key="frame" x="5" y="2" width="44.5" height="21"/>
+                                                                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="18"/>
+                                                                                <nil key="textColor"/>
+                                                                                <nil key="highlightedColor"/>
+                                                                            </label>
+                                                                        </subviews>
+                                                                        <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                        <constraints>
+                                                                            <constraint firstItem="cfk-Pj-UHi" firstAttribute="leading" secondItem="HqC-2X-VR7" secondAttribute="leading" constant="5" id="10w-3f-b0y"/>
+                                                                            <constraint firstAttribute="bottom" secondItem="cfk-Pj-UHi" secondAttribute="bottom" constant="2" id="AjF-Aq-YYl"/>
+                                                                            <constraint firstItem="cfk-Pj-UHi" firstAttribute="top" secondItem="HqC-2X-VR7" secondAttribute="top" constant="2" id="GwH-pw-bq0"/>
+                                                                            <constraint firstAttribute="trailing" secondItem="cfk-Pj-UHi" secondAttribute="trailing" constant="5" id="cCH-9d-5kh"/>
+                                                                        </constraints>
+                                                                    </view>
+                                                                </subviews>
+                                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="trailing" secondItem="HqC-2X-VR7" secondAttribute="trailing" id="Gth-1W-Wep"/>
+                                                                    <constraint firstItem="HqC-2X-VR7" firstAttribute="centerY" secondItem="YLe-fI-PRl" secondAttribute="centerY" id="KR2-Nx-R8H"/>
+                                                                </constraints>
+                                                            </view>
+                                                        </subviews>
+                                                    </stackView>
                                                 </subviews>
                                                 <constraints>
                                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="20" id="6z4-UE-BKn"/>
@@ -230,7 +263,7 @@
                                         </constraints>
                                     </view>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="RUS-ch-4eJ">
-                                        <rect key="frame" x="0.0" y="85" width="375" height="100"/>
+                                        <rect key="frame" x="0.0" y="114" width="375" height="100"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="100" placeholder="YES" id="DRz-3l-OtW"/>
                                         </constraints>
@@ -265,6 +298,8 @@
                         <outlet property="scrollView" destination="Wry-I3-aIh" id="3mZ-1f-K5O"/>
                         <outlet property="timeLabel" destination="uhb-05-rLH" id="a1k-p0-2Ah"/>
                         <outlet property="titleLabel" destination="PlP-9M-sCQ" id="l9S-Aj-9cR"/>
+                        <outlet property="trackLabel" destination="cfk-Pj-UHi" id="Evc-8d-cJi"/>
+                        <outlet property="trackLabelBackground" destination="HqC-2X-VR7" id="lbV-1q-aIq"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YBn-Rg-h5q" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -277,7 +312,7 @@
                 <navigationController storyboardIdentifier="scheduleTableNav" title="Schedule" id="45x-xE-eAi" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Schedule" image="calendar-dark" id="rCS-0x-Tbg"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" translucent="NO" id="rnG-WR-LeA">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="rnG-WR-LeA">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>

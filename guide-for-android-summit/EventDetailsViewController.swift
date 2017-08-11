@@ -16,7 +16,8 @@ class EventDetailsViewController: UIViewController {
     @IBOutlet weak var headerBackgroundView: UIView!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var timeLabel: UILabel!
-
+    @IBOutlet weak var trackLabel: UILabel!
+    @IBOutlet weak var trackLabelBackground: UIView!
 
     // MARK: Instance Variables
     var event: Event?
@@ -34,6 +35,22 @@ class EventDetailsViewController: UIViewController {
         titleLabel.textColor = trackColor
         titleLabel.text = event.title
         timeLabel.text = "\(event.getStartTime())-\(event.getEndTime())"
+
+        trackLabel.textColor = .white
+        trackLabelBackground.roundEdges(with: 3)
+        trackLabelBackground.backgroundColor = trackColor
+
+        switch event.track {
+        case .Design:
+            trackLabel.text = "Design"
+        case .Development:
+            trackLabel.text = "Development"
+        case .Testing:
+            trackLabel.text = "Testing"
+        default:
+            trackLabel.text = "" // no track
+            trackLabelBackground.backgroundColor = .clear
+        }
 
         addBoxyView(title: nil, content:
             paragraphFrom(description: event.description), color: nil)

@@ -21,10 +21,10 @@ class LoginViewController: UIViewController {
 
     fileprivate func configureButtons() {
         GoogleLoginButton.setBorders(1)
-        GoogleLoginButton.roundCornersWith(3)
+        GoogleLoginButton.roundEdges(with: 3)
 
         GuestLoginButton.setBorders(1)
-        GuestLoginButton.roundCornersWith(3)
+        GuestLoginButton.roundEdges(with: 3)
     }
 
     @IBAction func loginButton(_ sender: UIButton) {
@@ -60,10 +60,6 @@ extension UIButton {
     func setBorders(_ pointValue: CGFloat, with color: UIColor = .white) {
         self.layer.borderWidth = pointValue
         self.layer.borderColor = color.cgColor
-    }
-
-    func roundCornersWith(_ pointValue: CGFloat) {
-        self.layer.cornerRadius = pointValue
     }
 }
 

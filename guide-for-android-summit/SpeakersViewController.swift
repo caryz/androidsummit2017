@@ -72,15 +72,6 @@ class SpeakersViewController: UIViewController, UITableViewDataSource, UITableVi
 
 extension UIImageView {
 
-    func setRounded() {
-        let radius = (self.bounds.size.width) / 2
-        self.layer.cornerRadius = radius
-        self.layer.masksToBounds = true
-        self.clipsToBounds = true
-        self.layer.borderWidth = 1
-        self.layer.borderColor = UIColor.gray.cgColor
-    }
-
     public func imageFromServerURL(urlString: String) {
         guard let avatarUrl = NSURL(string: urlString) else { return }
 

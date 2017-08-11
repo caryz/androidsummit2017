@@ -75,6 +75,8 @@ class InfoViewController: UIViewController, UIScrollViewDelegate {
             alert.addAction(googleMapsButton)
         }
 
+        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+
         self.present(alert, animated: true, completion: nil)
     }
 
