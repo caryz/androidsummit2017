@@ -74,6 +74,18 @@ func convertToAMPM(_ interval: TimeInterval) -> String {
     return formatter.string(from: convertIntervalToDate(interval))
 }
 
+func showAlert(_ title: String, message: String) -> UIAlertController {
+    let alert = UIAlertController(title: title,
+                                  message: message,
+                                  preferredStyle: UIAlertControllerStyle.alert)
+
+    let cancelAction = UIAlertAction(title: "OK",
+                                     style: .cancel, handler: nil)
+
+    alert.addAction(cancelAction)
+    return alert
+}
+
 extension UIView {
     func addShadows() {
         self.layer.shadowColor = UIColor.black.withAlphaComponent(0.2).cgColor

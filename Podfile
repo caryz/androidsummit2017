@@ -10,6 +10,7 @@ target 'guide-for-android-summit' do
   pod 'Firebase/Core'
   pod 'Firebase/Database'
   pod 'Firebase/Auth'
+  pod 'GoogleSignIn'
 
   target 'guide-for-android-summitTests' do
     inherit! :search_paths

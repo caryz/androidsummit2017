@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "D2D683629496B295BBAF209F27C7D68F"
+               BlueprintIdentifier = "3FA522B9A1E08EE5E2946598D98FCFA7"
                BuildableName = "Pods_guide_for_android_summit.framework"
                BlueprintName = "Pods-guide-for-android-summit"
                ReferencedContainer = "container:Pods.xcodeproj">
@@ -45,7 +45,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "D2D683629496B295BBAF209F27C7D68F"
+            BlueprintIdentifier = "3FA522B9A1E08EE5E2946598D98FCFA7"
             BuildableName = "Pods_guide_for_android_summit.framework"
             BlueprintName = "Pods-guide-for-android-summit"
             ReferencedContainer = "container:Pods.xcodeproj">
