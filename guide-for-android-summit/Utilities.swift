@@ -15,6 +15,10 @@ enum SegueId: String {
     case speakerDetails = "showSpeakerDetails"
 }
 
+struct StoryboardId {
+    static let Login = "loginVC"
+}
+
 struct SummitColors {
     static let red = UIColor(red: 220/255, green: 81/255, blue: 65/255, alpha: 1.0) // #DC5141
 }

@@ -20,6 +20,7 @@ class ScheduleTableViewController: UIViewController, UITableViewDelegate, UITabl
     let cellReuseIdentifier = "customEventCell"
     let ref = Database.database().reference(withPath: "schedule")
     let speakerRef = Database.database().reference(withPath: "speakers")
+    let bookmarkRef = Database.database().reference(withPath: "users")
 
     // first layer = thurs/fri; second layer = time section; third layer = time rows
     var events = [Event]()
@@ -38,6 +39,7 @@ class ScheduleTableViewController: UIViewController, UITableViewDelegate, UITabl
     }
 
     func configureTableView() {
+        UIApplication.shared.statusBarView?.backgroundColor = .white
         loadingSpinner.startAnimating()
 
         // self sizing cells
@@ -87,7 +89,6 @@ class ScheduleTableViewController: UIViewController, UITableViewDelegate, UITabl
             self.populateTimeTable()
             self.didFinishFetching = true
             self.loadingSpinner.stopAnimating()
-            UIApplication.shared.statusBarView?.backgroundColor = .white
             self.tableView.reloadData()
         })
     }
@@ -302,7 +303,7 @@ class ScheduleTableViewController: UIViewController, UITableViewDelegate, UITabl
 
     func refresh(sender: AnyObject) {
         print("refreshing data")
-        sleep(1)
+        //fetchData()
         refreshControl.endRefreshing()
     }
 

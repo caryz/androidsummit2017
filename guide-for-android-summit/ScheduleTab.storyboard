@@ -312,7 +312,7 @@
                 <navigationController storyboardIdentifier="scheduleTableNav" title="Schedule" id="45x-xE-eAi" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Schedule" image="calendar-dark" id="rCS-0x-Tbg"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="rnG-WR-LeA">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" translucent="NO" id="rnG-WR-LeA">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>

@@ -15,12 +15,16 @@ class LoginViewController: UIViewController, GIDSignInUIDelegate, GIDSignInDeleg
     @IBOutlet weak var GoogleLoginButton: UIButton!
     @IBOutlet weak var GuestLoginButton: UIButton!
     
+    @IBOutlet weak var loginSpinner: UIActivityIndicatorView!
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        configureButtons()
+        configureUI()
     }
 
-    fileprivate func configureButtons() {
+    fileprivate func configureUI() {
+        loginSpinner.stopAnimating()
+
         GIDSignIn.sharedInstance().uiDelegate = self
         GIDSignIn.sharedInstance().delegate = self
         GIDSignIn.sharedInstance().clientID = FirebaseApp.app()?.options.clientID
@@ -33,11 +37,14 @@ class LoginViewController: UIViewController, GIDSignInUIDelegate, GIDSignInDeleg
     }
 
     @IBAction func loginButton(_ sender: UIButton) {
+        loginSpinner.startAnimating()
         GIDSignIn.sharedInstance().signIn()
     }
     
     @IBAction func guestButtonTapped(_ sender: UIButton) {
+        loginSpinner.startAnimating()
         Auth.auth().signInAnonymously() { (user, error) in
+            self.loginSpinner.stopAnimating()
             if let e = error {
                 self.handleLoginError(e)
                 return
@@ -52,8 +59,8 @@ class LoginViewController: UIViewController, GIDSignInUIDelegate, GIDSignInDeleg
     }
 
     public func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {
-        if let e = error {
-            handleLoginError(e)
+        if let _ = error {
+            self.loginSpinner.stopAnimating()
             return
         }
 
@@ -64,6 +71,7 @@ class LoginViewController: UIViewController, GIDSignInUIDelegate, GIDSignInDeleg
         print("Signed In: \(credential.provider) | \(user.userID)")
 
         Auth.auth().signIn(with: credential) { (user, error) in
+            self.loginSpinner.stopAnimating()
             if let e = error {
                 self.handleLoginError(e)
                 return
