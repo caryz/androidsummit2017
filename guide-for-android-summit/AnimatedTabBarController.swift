@@ -23,6 +23,7 @@ class AnimatedTabBarController: UITabBarController, UITabBarControllerDelegate {
         let fromView = selectedViewController!.view
         let toView = viewController.view
 
+        fromView!.superview?.addSubview(toView!) // avoid nav bar flicker
         UIView.transition(from: fromView!, to: toView!, duration: 0.5, options: [.transitionCrossDissolve], completion: nil)
         
         return true

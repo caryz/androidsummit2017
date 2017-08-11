@@ -19,11 +19,11 @@
                         <viewControllerLayoutGuide type="bottom" id="HGW-I1-12y"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="kh1-nn-2eC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="wg8-Dd-4SN" userLabel="Day Segment">
-                                <rect key="frame" x="16" y="66" width="343" height="32"/>
+                                <rect key="frame" x="16" y="2" width="343" height="32"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="31" id="NNU-k2-CPN"/>
                                 </constraints>
@@ -37,7 +37,7 @@
                                 </connections>
                             </segmentedControl>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="OQM-kh-Tsa">
-                                <rect key="frame" x="0.0" y="99" width="375" height="568"/>
+                                <rect key="frame" x="0.0" y="35" width="375" height="568"/>
                                 <color key="backgroundColor" red="0.93335485460000001" green="0.93331974740000001" blue="0.93334352970000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <color key="tintColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="separatorColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -147,7 +147,7 @@
                                 </connections>
                             </tableView>
                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="E8X-0p-eU0">
-                                <rect key="frame" x="169" y="315" width="37" height="37"/>
+                                <rect key="frame" x="169" y="283" width="37" height="37"/>
                                 <color key="color" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             </activityIndicatorView>
                         </subviews>
@@ -191,29 +191,28 @@
                         <viewControllerLayoutGuide type="bottom" id="VxU-mq-ZcW"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="eJ6-aU-m2E">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Wry-I3-aIh">
-                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Bf5-t2-bTm" userLabel="Header Background View">
-                                        <rect key="frame" x="0.0" y="-64" width="375" height="73.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="75"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="8Rn-Uf-suI" userLabel="Header Stack">
-                                                <rect key="frame" x="15" y="15" width="345" height="53.5"/>
+                                                <rect key="frame" x="15" y="15" width="345" height="55"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Really Long and D4nk Title" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PlP-9M-sCQ">
-                                                        <rect key="frame" x="0.0" y="0.0" width="345" height="30"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="345" height="29"/>
                                                         <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="25"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
-                                                        <color key="shadowColor" white="0.80154079860000005" alpha="1" colorSpace="calibratedWhite"/>
                                                         <size key="shadowOffset" width="1" height="1"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="12:00PM-2:00PM" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uhb-05-rLH">
-                                                        <rect key="frame" x="0.0" y="35" width="345" height="18.5"/>
-                                                        <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="16"/>
+                                                        <rect key="frame" x="0.0" y="34" width="345" height="21"/>
+                                                        <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="18"/>
                                                         <color key="textColor" red="0.60784313729999995" green="0.60784313729999995" blue="0.60784313729999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
@@ -231,7 +230,7 @@
                                         </constraints>
                                     </view>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="RUS-ch-4eJ">
-                                        <rect key="frame" x="0.0" y="19.5" width="375" height="100"/>
+                                        <rect key="frame" x="0.0" y="85" width="375" height="100"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="100" placeholder="YES" id="DRz-3l-OtW"/>
                                         </constraints>
@@ -244,7 +243,7 @@
                                     <constraint firstItem="Bf5-t2-bTm" firstAttribute="leading" secondItem="Wry-I3-aIh" secondAttribute="leading" id="CoQ-2w-KzY"/>
                                     <constraint firstItem="RUS-ch-4eJ" firstAttribute="width" secondItem="Wry-I3-aIh" secondAttribute="width" id="H5a-fB-mhn"/>
                                     <constraint firstItem="RUS-ch-4eJ" firstAttribute="centerX" secondItem="Wry-I3-aIh" secondAttribute="centerX" id="Iis-ep-6BH"/>
-                                    <constraint firstItem="Bf5-t2-bTm" firstAttribute="top" secondItem="Wry-I3-aIh" secondAttribute="top" constant="-64" id="PMx-Yx-HaD"/>
+                                    <constraint firstItem="Bf5-t2-bTm" firstAttribute="top" secondItem="Wry-I3-aIh" secondAttribute="top" id="PMx-Yx-HaD"/>
                                     <constraint firstItem="Bf5-t2-bTm" firstAttribute="width" secondItem="Wry-I3-aIh" secondAttribute="width" id="TxI-ni-Ggh"/>
                                     <constraint firstItem="RUS-ch-4eJ" firstAttribute="bottom" secondItem="Wry-I3-aIh" secondAttribute="bottom" id="w30-kb-gKS"/>
                                     <constraint firstItem="Bf5-t2-bTm" firstAttribute="trailing" secondItem="Wry-I3-aIh" secondAttribute="trailing" id="yBC-NA-hV3"/>
@@ -278,7 +277,7 @@
                 <navigationController storyboardIdentifier="scheduleTableNav" title="Schedule" id="45x-xE-eAi" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Schedule" image="calendar-dark" id="rCS-0x-Tbg"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="rnG-WR-LeA">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" translucent="NO" id="rnG-WR-LeA">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -288,9 +287,10 @@
                         </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
-                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" barStyle="black" translucent="NO" id="EZW-Sj-PcE">
+                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translucent="NO" id="EZW-Sj-PcE">
                         <rect key="frame" x="0.0" y="623" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     </toolbar>
                     <connections>
                         <segue destination="8NL-Zm-P7n" kind="relationship" relationship="rootViewController" id="VNH-cd-0Kl"/>
