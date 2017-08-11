@@ -89,6 +89,6 @@ struct Event {
 
     static func ==(lhs: Event, rhs: Event) -> Bool {
         // TODO: make this into eventId comparisons later
-        return lhs.title == rhs.title // && lhs.type == rhs.type
+        return lhs.title == rhs.title && lhs.key == rhs.key // && lhs.type == rhs.type
     }
 }

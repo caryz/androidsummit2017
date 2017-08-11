@@ -83,14 +83,6 @@ class InfoViewController: UIViewController, UIScrollViewDelegate {
     func navigationButton() -> UIButton {
         let gestureRecognizer = UITapGestureRecognizer(target: self,
                                              action: #selector(self.handleNavigationTap))
-        gestureRecognizer.numberOfTapsRequired = 3
-
-//        let button = UIButton(frame: CGRect(x: 0, y: 0, width: 100, height: 60))
-//        button.setTitle("Get Directions", for: .normal)
-//        button.setTitleColor(SummitColors.red, for: .normal)
-//        button.titleLabel?.font = UIFont(name: "Helvetica-Bold", size: 18)
-//        button.addGestureRecognizer(gestureRecognizer)
-
         return buildTileButton(title: "Get Directions", gesture: gestureRecognizer)
     }
 
