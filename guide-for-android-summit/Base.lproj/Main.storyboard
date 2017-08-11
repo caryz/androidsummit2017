@@ -36,7 +36,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="554"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="kiw-Ol-HDM">
-                                        <rect key="frame" x="0.0" y="-64" width="375" height="100"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="100"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="100" placeholder="YES" id="haT-Bd-Ypg"/>
                                         </constraints>
@@ -46,7 +46,7 @@
                                 <color key="backgroundColor" red="0.93335485460000001" green="0.93331974740000001" blue="0.93334352970000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstItem="kiw-Ol-HDM" firstAttribute="width" secondItem="tty-zV-ssx" secondAttribute="width" id="16E-FU-u6c"/>
-                                    <constraint firstItem="kiw-Ol-HDM" firstAttribute="top" secondItem="tty-zV-ssx" secondAttribute="top" constant="-64" id="ToX-7z-NoC"/>
+                                    <constraint firstItem="kiw-Ol-HDM" firstAttribute="top" secondItem="tty-zV-ssx" secondAttribute="top" id="ToX-7z-NoC"/>
                                     <constraint firstItem="kiw-Ol-HDM" firstAttribute="trailing" secondItem="tty-zV-ssx" secondAttribute="trailing" id="i0P-zL-0Ud"/>
                                     <constraint firstItem="kiw-Ol-HDM" firstAttribute="leading" secondItem="tty-zV-ssx" secondAttribute="leading" id="lTm-l0-R9D"/>
                                     <constraint firstItem="kiw-Ol-HDM" firstAttribute="bottom" secondItem="tty-zV-ssx" secondAttribute="bottom" id="nJb-la-Z59"/>
@@ -189,7 +189,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" modalTransitionStyle="flipHorizontal" id="VXb-c7-esb" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="About" image="information-outline-dark" id="jiw-e0-wcT"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" translucent="NO" id="uw8-BL-i8j">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="uw8-BL-i8j">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>

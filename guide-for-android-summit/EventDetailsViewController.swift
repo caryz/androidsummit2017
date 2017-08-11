@@ -56,7 +56,8 @@ class EventDetailsViewController: UIViewController {
             paragraphFrom(description: event.description), color: nil)
 
         if !event.speakers.isEmpty {
-            addSpeakerView(title: "Speakers", color: trackColor)
+            let title = event.speakerList.count == 1 ? "Speaker" : "Speakers"
+            addSpeakerView(title: title, color: trackColor)
         }
     }
 
