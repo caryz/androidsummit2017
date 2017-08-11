@@ -24,4 +24,9 @@ class SessionManager {
 
     var fetchedSpeakers: [Person] = [Person]()
 
+    var userDisplayName: String = "Guest"
+
+    var userEmail: String = "No Email :("
+
+    var userPhotoUrl: URL? = nil
 }

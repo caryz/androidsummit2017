@@ -21,27 +21,37 @@
                         <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="More" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nyf-gS-2Ar">
-                                <rect key="frame" x="166" y="323" width="40" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KxI-kx-jRY">
-                                <rect key="frame" x="156" y="352" width="60" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Sign Out"/>
-                                <connections>
-                                    <action selector="logOutButtonTapped:" destination="fpL-jt-DTD" eventType="touchUpInside" id="G3W-KP-otR"/>
-                                </connections>
-                            </button>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9fm-GC-lmU">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="Phl-6I-AIN" userLabel="ContentStack">
+                                        <rect key="frame" x="10" y="15" width="355" height="100"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="100" placeholder="YES" id="bXo-Rg-6tg"/>
+                                        </constraints>
+                                    </stackView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="Phl-6I-AIN" firstAttribute="centerX" secondItem="9fm-GC-lmU" secondAttribute="centerX" id="ALy-p0-QJC"/>
+                                    <constraint firstItem="Phl-6I-AIN" firstAttribute="leading" secondItem="9fm-GC-lmU" secondAttribute="leading" constant="10" id="CFN-mR-nn0"/>
+                                    <constraint firstAttribute="bottom" secondItem="Phl-6I-AIN" secondAttribute="bottom" constant="15" id="eRz-eL-hqO"/>
+                                    <constraint firstItem="Phl-6I-AIN" firstAttribute="top" secondItem="9fm-GC-lmU" secondAttribute="top" constant="15" id="nBp-aF-QYx"/>
+                                    <constraint firstAttribute="trailing" secondItem="Phl-6I-AIN" secondAttribute="trailing" constant="10" id="r4p-FA-Zpo"/>
+                                </constraints>
+                            </scrollView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="9fm-GC-lmU" firstAttribute="top" secondItem="5JL-p3-lCb" secondAttribute="bottom" id="7P6-94-q6D"/>
+                            <constraint firstItem="NSp-ha-ANI" firstAttribute="top" secondItem="9fm-GC-lmU" secondAttribute="bottom" id="9d9-lZ-3qe"/>
+                            <constraint firstItem="9fm-GC-lmU" firstAttribute="width" secondItem="ioA-8Y-sMA" secondAttribute="width" id="N1o-OK-POd"/>
+                            <constraint firstAttribute="trailing" secondItem="9fm-GC-lmU" secondAttribute="trailing" id="Ri4-h4-fFD"/>
+                            <constraint firstItem="9fm-GC-lmU" firstAttribute="leading" secondItem="ioA-8Y-sMA" secondAttribute="leading" id="zAE-pt-zlb"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="More" id="Dj2-eq-RbC"/>
                     <connections>
-                        <outlet property="logOutButton" destination="KxI-kx-jRY" id="Lcr-AR-Haa"/>
+                        <outlet property="contentStack" destination="Phl-6I-AIN" id="ySL-1x-rHG"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="irb-nF-f10" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -59,6 +69,7 @@
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <textAttributes key="titleTextAttributes">
+                            <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="20"/>
                             <color key="textColor" red="0.86385828259999997" green="0.31953740120000002" blue="0.25496479869999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         </textAttributes>
                     </navigationBar>

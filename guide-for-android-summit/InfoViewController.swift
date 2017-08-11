@@ -83,14 +83,15 @@ class InfoViewController: UIViewController, UIScrollViewDelegate {
     func navigationButton() -> UIButton {
         let gestureRecognizer = UITapGestureRecognizer(target: self,
                                              action: #selector(self.handleNavigationTap))
+        gestureRecognizer.numberOfTapsRequired = 3
 
-        let button = UIButton(frame: CGRect(x: 0, y: 0, width: 100, height: 60))
-        button.setTitle("Get Directions", for: .normal)
-        button.setTitleColor(SummitColors.red, for: .normal)
-        button.titleLabel?.font = UIFont(name: "Helvetica-Bold", size: 18)
-        button.addGestureRecognizer(gestureRecognizer)
+//        let button = UIButton(frame: CGRect(x: 0, y: 0, width: 100, height: 60))
+//        button.setTitle("Get Directions", for: .normal)
+//        button.setTitleColor(SummitColors.red, for: .normal)
+//        button.titleLabel?.font = UIFont(name: "Helvetica-Bold", size: 18)
+//        button.addGestureRecognizer(gestureRecognizer)
 
-        return button
+        return buildTileButton(title: "Get Directions", gesture: gestureRecognizer)
     }
 
     @IBAction func didTapEasterEgg(_ sender: UIBarButtonItem) {
@@ -102,7 +103,7 @@ class InfoViewController: UIViewController, UIScrollViewDelegate {
             easterEggView.backgroundColor = UIColor.lightGray
             let label = UILabel(frame: CGRect(x: 0, y: 0, width: 200, height: 50))
             label.adjustsFontSizeToFitWidth = true
-            label.text = "Stahp. Fk u. Juliana sucks."
+            label.text = "Hello world!"
             easterEggView.addSubview(label)
             view.addSubview(easterEggView)
             didTriggerEasterEgg = true

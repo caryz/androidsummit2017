@@ -90,4 +90,11 @@ extension UIImageView {
 
         }).resume()
     }
+
+    public func imageNamed(_ name: String) {
+        let image = UIImage(named: name)
+        self.image = image
+        self.setRounded()
+        self.layoutSubviews()
+    }
 }

@@ -90,6 +90,16 @@ func showAlert(_ title: String, message: String) -> UIAlertController {
     return alert
 }
 
+func buildTileButton(title: String, gesture: UIGestureRecognizer,
+                     color: UIColor = SummitColors.red) -> UIButton {
+    let button = UIButton(frame: CGRect(x: 0, y: 0, width: 100, height: 60))
+    button.setTitle(title, for: .normal)
+    button.setTitleColor(color, for: .normal)
+    button.titleLabel?.font = UIFont(name: "Helvetica-Bold", size: 18)
+    button.addGestureRecognizer(gesture)
+    return button
+}
+
 extension UIView {
     func addShadows() {
         self.layer.shadowColor = UIColor.black.withAlphaComponent(0.2).cgColor

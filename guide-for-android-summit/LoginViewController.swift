@@ -17,6 +17,8 @@ class LoginViewController: UIViewController, GIDSignInUIDelegate, GIDSignInDeleg
     
     @IBOutlet weak var loginSpinner: UIActivityIndicatorView!
 
+    //let usersRef = Database.database().reference(withPath: "users")
+
     override func viewDidLoad() {
         super.viewDidLoad()
         configureUI()
@@ -76,8 +78,17 @@ class LoginViewController: UIViewController, GIDSignInUIDelegate, GIDSignInDeleg
                 self.handleLoginError(e)
                 return
             }
-            print("Signed into Firebase")
-            self.performSegue(withIdentifier: SegueId.tabBarSegue.rawValue, sender: nil)
+            if let user = user {
+                print("Signed into Firebase")
+                SessionManager.sharedInstance.uid = user.uid
+                SessionManager.sharedInstance.userDisplayName = user.displayName ?? "Nameless"
+                SessionManager.sharedInstance.userEmail = user.email ?? "No Email :("
+                SessionManager.sharedInstance.userPhotoUrl = user.photoURL
+
+                //self.checkUserServersideData(user.uid)
+
+                self.performSegue(withIdentifier: SegueId.tabBarSegue.rawValue, sender: nil)
+            }
         }
     }
 
@@ -92,6 +103,26 @@ class LoginViewController: UIViewController, GIDSignInUIDelegate, GIDSignInDeleg
                      animated: true, completion: nil)
         print("Login Error: [\(err.localizedDescription)]")
     }
+
+//    fileprivate func checkUserServersideData(_ uid: String) {
+//        usersRef.observe(.value, with: { snapshot in
+//            //var newItems: [GroceryItem] = []
+//            var users: [String] = []
+//            for user in snapshot.children {
+////                users.append(user)
+////                if uid == user {
+////                    // current user's saved bookmarks should be populated
+////                    //SessionManager.sharedInstance.bookmarkedEvents
+////                }
+//            }
+//
+//            if !users.contains(uid) {
+//                // add user if it does not exist currently
+//            }
+//
+//            print(users)
+//        })
+//    }
 }
 
 @IBDesignable
