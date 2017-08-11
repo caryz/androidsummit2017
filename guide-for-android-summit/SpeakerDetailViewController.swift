@@ -24,6 +24,7 @@ class SpeakerDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.automaticallyAdjustsScrollViewInsets = false
+        self.navigationController?.navigationBar.tintColor = SummitColors.red
         configure()
     }
 

@@ -22,17 +22,17 @@
                         <constraint firstAttribute="height" constant="60" id="Img-he-AUT"/>
                     </constraints>
                 </imageView>
-                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="RAU-4X-mY5">
-                    <rect key="frame" x="80" y="5" width="230" height="70"/>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="RAU-4X-mY5">
+                    <rect key="frame" x="80" y="19" width="230" height="42"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="cdC-wU-D9d" userLabel="Title">
-                            <rect key="frame" x="0.0" y="0.0" width="230" height="34.5"/>
+                            <rect key="frame" x="0.0" y="0.0" width="230" height="21"/>
                             <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="18"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Detail" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="UmC-GN-PK2" userLabel="Detail">
-                            <rect key="frame" x="0.0" y="39.5" width="230" height="30.5"/>
+                            <rect key="frame" x="0.0" y="21" width="230" height="21"/>
                             <fontDescription key="fontDescription" name="Helvetica-Oblique" family="Helvetica" pointSize="14"/>
                             <color key="textColor" red="0.60790485139999995" green="0.60788136719999997" blue="0.60789728160000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             <nil key="highlightedColor"/>
@@ -47,10 +47,8 @@
                 <constraint firstAttribute="trailing" secondItem="RAU-4X-mY5" secondAttribute="trailing" constant="10" id="Dty-mU-7QI"/>
                 <constraint firstItem="YwT-Qz-K6C" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="10" id="GCM-rI-qMl"/>
                 <constraint firstItem="RAU-4X-mY5" firstAttribute="leading" secondItem="YwT-Qz-K6C" secondAttribute="trailing" constant="10" id="RNf-Pa-pdX"/>
-                <constraint firstAttribute="bottom" secondItem="RAU-4X-mY5" secondAttribute="bottom" constant="5" id="UUl-eZ-JFw"/>
                 <constraint firstItem="YwT-Qz-K6C" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="10" id="hRD-wL-GzG"/>
                 <constraint firstItem="RAU-4X-mY5" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="qvL-pW-iAX"/>
-                <constraint firstItem="RAU-4X-mY5" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="5" id="zXU-zg-jqq"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>

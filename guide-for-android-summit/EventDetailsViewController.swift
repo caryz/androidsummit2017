@@ -23,6 +23,7 @@ class EventDetailsViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationController?.navigationBar.tintColor = TrackColors().getColor(event!.track)
         configure()
     }
 
