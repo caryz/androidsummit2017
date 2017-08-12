@@ -55,9 +55,16 @@ class LoginViewController: UIViewController, GIDSignInUIDelegate, GIDSignInDeleg
             if let usr = user {
                 print("User [\(usr.uid)] has logged in")
                 SessionManager.sharedInstance.uid = usr.uid
+                SessionManager.sharedInstance.userDisplayName = "Guest"
+                SessionManager.sharedInstance.userEmail = "No Email :("
+                SessionManager.sharedInstance.userPhotoUrl = nil
                 self.performSegue(withIdentifier: SegueId.tabBarSegue.rawValue, sender: nil)
             }
         }
+    }
+
+    @IBAction func unwindToLoginVC(segue: UIStoryboardSegue) {
+        
     }
 
     public func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {

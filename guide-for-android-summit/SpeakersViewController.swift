@@ -50,7 +50,7 @@ class SpeakersViewController: UIViewController, UITableViewDataSource, UITableVi
         let speaker = speakers[indexPath.row]
         cell.configure(name: speaker.fullName, company: speaker.company)
         cell.speakerImage?.imageFromServerURL(urlString: speaker.avatar)
-        print(speaker.avatar)
+        //print(speaker.avatar)
 
         return cell
     }

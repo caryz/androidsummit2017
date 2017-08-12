@@ -74,16 +74,14 @@ class MoreViewController: UIViewController {
 
             if Auth.auth().currentUser == nil {
                 print("User logged out")
-                let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
-                let loginVC: LoginViewController = storyboard.instantiateViewController(
-                    withIdentifier: StoryboardId.Login) as! LoginViewController
 
                 UIApplication.shared.statusBarView?.backgroundColor = .clear
-                self.present(loginVC, animated: true, completion: nil)
+                performSegue(withIdentifier: SegueId.unwindToLogin.rawValue, sender: self)
             }
         } catch let signOutError as NSError {
             self.present(showAlert("Logout Error", message: signOutError.localizedDescription),
                          animated: true, completion: nil)
         }
     }
+
 }

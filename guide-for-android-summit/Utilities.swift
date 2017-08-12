@@ -13,6 +13,7 @@ enum SegueId: String {
     case eventDetails = "showEventDetails"
     case tabBarSegue = "TabBarSegue"
     case speakerDetails = "showSpeakerDetails"
+    case unwindToLogin = "unwindToLoginVC"
 }
 
 struct StoryboardId {
