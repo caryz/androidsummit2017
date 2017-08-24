@@ -151,25 +151,7 @@ class ScheduleTableViewController: UIViewController, UITableViewDelegate, UITabl
     }
 
     @IBAction func bookMarkToggleTapped(_ sender: UIBarButtonItem) {
-        if bookmarkButtonChecked == false {
-            var toDelete = [IndexPath]()
-
-            for s in (0..<timeTable[dayIndex].count).reversed() {
-                for r in (0..<timeTable[dayIndex][s].count).reversed() {
-                    let indexPath = IndexPath(row: r, section: s)
-                    let event = timeTable[dayIndex][s][r]
-                    if !savedEvents.contains(where: { $0 == event }) {
-                        toDelete.append(indexPath)
-                        timeTable[dayIndex][s].remove(at: r)
-                        print("Deleting: [\(event.title)] at [\(s), \(r)]")
-                    }
-                }
-            }
-
-            deleteAppropriateCells(toDelete, animation: .fade)
-            bookmarkButtonChecked = true
-            toggleBookmark(true)
-        } else {
+        if bookmarkButtonChecked {
             // add all rows
             var toInsert = [IndexPath]()
             for sec in (0..<allEvents[dayIndex].count) {
@@ -188,6 +170,24 @@ class ScheduleTableViewController: UIViewController, UITableViewDelegate, UITabl
             tableView.insertRows(at: toInsert, with: .fade)
             bookmarkButtonChecked = false
             toggleBookmark(false)
+        } else {
+            var toDelete = [IndexPath]()
+
+            for s in (0..<timeTable[dayIndex].count).reversed() {
+                for r in (0..<timeTable[dayIndex][s].count).reversed() {
+                    let indexPath = IndexPath(row: r, section: s)
+                    let event = timeTable[dayIndex][s][r]
+                    if !savedEvents.contains(where: { $0 == event }) {
+                        toDelete.append(indexPath)
+                        timeTable[dayIndex][s].remove(at: r)
+                        print("Deleting: [\(event.title)] at [\(s), \(r)]")
+                    }
+                }
+            }
+
+            deleteAppropriateCells(toDelete, animation: .fade)
+            bookmarkButtonChecked = true
+            toggleBookmark(true)
         }
     }
 
@@ -254,7 +254,7 @@ class ScheduleTableViewController: UIViewController, UITableViewDelegate, UITabl
     fileprivate func deleteAppropriateCells(_ toDelete: [IndexPath],
                                             animation: UITableViewRowAnimation = .automatic) {
         /* Rationale and Explanation
-         * You're probably looking at this goign wtf
+         * You're probably looking at this going wtf
          * But this is for the smoothest animation possible during the edge case
          * in which user deletes all rows and leaves a random section header
          * sitting around. Maybe that's an Apple bug, but hey it is what it is.
