@@ -22,8 +22,11 @@ This is a schedule app for Android Summit 2017. It has basic functionalities lik
 ### Speakers
 <img src="https://github.com/caryz/androidsummit2017/blob/screenshots/screenshots/speakers.png" width="300"/>
 
-### Credits
+### About
 <img src="https://github.com/caryz/androidsummit2017/blob/screenshots/screenshots/about.png" width="300"/>
+
+### Credits
+<img src="https://github.com/caryz/androidsummit2017/blob/screenshots/screenshots/credits.png" width="300"/>
 
 ### Navigation
 <img src="https://github.com/caryz/androidsummit2017/blob/screenshots/screenshots/navigation.png" width="300"/>
