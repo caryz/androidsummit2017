@@ -26,7 +26,8 @@ This is a schedule app for Android Summit 2017. It has basic functionalities lik
 <img src="https://github.com/caryz/androidsummit2017/blob/screenshots/screenshots/about.png" width="300"/>
 
 ### Credits
-**Note: This is when user signed in anonymously as guest. Public e-mail and display name, if populated, are shown during Google login**
+Note: This is when user signed in anonymously as guest. Public e-mail and display name, if populated, are shown during Google login
+
 <img src="https://github.com/caryz/androidsummit2017/blob/screenshots/screenshots/credits.png" width="300"/>
 
 ### Navigation
